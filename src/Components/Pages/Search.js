@@ -1,7 +1,7 @@
-import React, {Component, useState, useEffect} from "react";
+import React, { useState, useEffect} from "react";
 import axios from "axios";
-import Landing from "../../Components/Sections/Landing.js";
-import {Container, Row, Col} from "react-bootstrap";
+//import Landing from "../../Components/Sections/Landing.js";
+import {Container} from "react-bootstrap";
 
 import "../../Components/Styles/Styles.css";
 
@@ -17,7 +17,7 @@ const App = () => {
         let userNum = user.length;
 
         for (var i = 0; i < userNum; i++) {
-            if (user[i].isAccepted == true) {
+            if (user[i].isAccepted === true) {
                 userArr.push(user[i]);
             }
         }
@@ -103,7 +103,7 @@ const App = () => {
                         </div>
                         <div className="search-section"></div>
                         <div id="searchbar">
-                            <input type="text" placeholder="search"
+                            <input type="text"
                                 onChange={handleChange}
                                 value={input}
                                 name="query"
@@ -157,7 +157,7 @@ const App = () => {
                                             } </h6>
                                         </div>
                                         <div className="second-col">
-                                            <img className="image"
+                                            <img alt ="Member" className="image"
                                                 src={
                                                     `/images/${
                                                         psych.imgurl

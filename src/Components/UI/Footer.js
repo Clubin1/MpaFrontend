@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import {Row, Col } from 'react-bootstrap';
 
 import '../../Components/Styles/Styles.css';
 
@@ -11,7 +11,7 @@ const Footer = () => {
 						<h1 className="footerLogo">MPACHARLOTTE</h1>
 					</Col>	
 					<Col className="upperFooter" md={6}>
-						<a href="https://thenerodev.com"><img className="nerologo" src="/images/nerologo.png"/></a>
+						<a href="https://thenerodev.com"><img alt="nerologo" className="nerologo" src="/images/nerologo.png"/></a>
 					</Col>					
 				</Row>
 

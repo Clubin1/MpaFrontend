@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import axios from 'axios'
 
 
 import '../../Components/Styles/About.css';
 import BoardMembers from '../../Components/Sections/BoardMembers.js';
 
 
-const apiUrl = process.env.API_URL || `https://blooming-forest-09372.herokuapp.com/`;
+//const apiUrl = process.env.API_URL || `https://blooming-forest-09372.herokuapp.com/`;
 
 
 class About extends Component {
@@ -21,14 +20,14 @@ class About extends Component {
 
 
 	async componentDidMount() {
-		try {
-			const res = await axios.get(apiUrl + '/aboutpages')
-  			.then(res => {
-				this.setState({aboutpage: res.data})
-  			});
-		} catch (err) {
-			console.error(err)
-		}
+		// try {
+		// 	const res = await axios.get(apiUrl + '/aboutpages')
+  		// 	.then(res => {
+		// 		this.setState({aboutpage: res.data})
+  		// 	});
+		// } catch (err) {
+		// 	console.error(err)
+		// }
 	}
  
 

@@ -1,5 +1,4 @@
-import React, {Component, useState} from 'react';
-import axios from 'axios'
+import React, {useState} from 'react';
 import {Container} from 'react-bootstrap'
 import Paypal from '../../Components/Sections/Paypal'
 import Paypal2 from '../../Components/Sections/Paypal2'
@@ -30,7 +29,9 @@ function Payment() {
                                 {
                                 checkout ? (
                                     <Paypal/>) : (
-                                    <a className="landingButton" onClick={
+                                    <a    
+                                    href="!#"                                
+                                     className="landingButton" onClick={
                                         () => {
                                             setCheckOut(true);
                                         }
@@ -49,7 +50,9 @@ function Payment() {
                                 {
                                 checkout2 ? (
                                     <Paypal2/>) : (
-                                    <a className="landingButton" onClick={
+                                    <a
+                                    href="!#"  
+                                     className="landingButton" onClick={
                                         () => {
                                             setCheckOut2(true);
                                         }

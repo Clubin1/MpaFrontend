@@ -1,7 +1,7 @@
-import React, {Component, useState} from 'react';
+import React, {useState} from 'react';
 import ContactLanding from '../Sections/ContactLanding';
 import '../../Components/Styles/Styles.css';
-import {Container, Row, Col, FormText} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { init, sendForm } from 'emailjs-com';
 const {REACT_APP_EMAIL_FORM_KEY} = process.env;
@@ -9,7 +9,7 @@ const {REACT_APP_EMAIL_FORM_KEY} = process.env;
 init(`user_EJB0UvP229Yp1EqevHUIz`);
 //user_EJB0UvP229Yp1EqevHUIz
 const Contact = () => {
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit} = useForm();
     const [contactNumber, setContactNumber] = useState("000000");
     const [statusMessage, setStatusMessage] = useState("");
 

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, Col } from 'react-bootstrap';
-import dissa from '../../Assets/404.jpg';
+import { Container } from 'react-bootstrap';
 import '../../Components/Styles/Styles.css';
 
 

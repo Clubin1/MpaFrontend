@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 
 import { FormGroup, Label, Input } from "reactstrap";
 
@@ -73,6 +73,7 @@ function Apply() {
 
     if (!response.ok) {
       setError(response.statusText);
+      console.log(error)
     }
   }
 

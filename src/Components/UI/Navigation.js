@@ -10,7 +10,7 @@ const Navigation = () => {
             <nav id="navBar" className="navbar navbar-expand-md navbar-dark">
                 <Container>
                     <Link to="/" className="navbar-brand">
-                        <img className="mpalogo" src="/images/mpalogo.png"/>
+                        <img alt="mpa logo" className="mpalogo" src="/images/mpalogo.png"/>
                     </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                         <span className="navbar-toggler-icon"></span>
@@ -21,7 +21,7 @@ const Navigation = () => {
                                 <Link to="/" className="nav-link">HOME</Link>
                             </li>
                             <li class="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a className="nav-link dropdown-toggle" href="!#"  id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 		            ABOUT
 		        	</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">

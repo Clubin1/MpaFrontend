@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import axios from 'axios'
-import ResourcesLanding from '../Sections/ResourcesLanding';
 import {Container} from 'react-bootstrap';
 
 
@@ -33,7 +31,7 @@ class Resources extends Component {
                             <a className="reasource-link" href="https://www.apa.org/">APA Help Center (public information)</a>- APA's Help Center is your online resource for brochures, tips and articles on the psychological issues that affect your physical and emotional well-being, as well as information about referrals.<br/>
                             <a className="reasource-link" href="https://www.mentalhelp.net/">Mental Help Net.</a>
                             An excellent resource for anyone interested in a variety of mental health topics--readable, accurate, and up-to-date material.<br/>
-                            <a className="reasource-link" href="#">Psychology in Daily Life: American Psychological Association.</a>
+                            <a className="reasource-link" href="!#">Psychology in Daily Life: American Psychological Association.</a>
                             Includes information on depression, sexual harassment, sexual orientation, and other mental health issues.<br/>
                             <a className="reasource-link" href="https://studentaffairs.illinois.edu/">Self-Help Brochures from University of Illinois at Urbana-Champaign Counseling Center.</a>
                             Includes online texts of brochures on various mental health topics relevant to students.<br/>

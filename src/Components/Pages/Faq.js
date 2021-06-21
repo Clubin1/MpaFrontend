@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Container } from 'react-bootstrap';
-import axios from 'axios'; 
 
 import '../../Components/Styles/Faq.css';
 
-const apiUrl = process.env.API_URL || `https://blooming-forest-09372.herokuapp.com/`;
+//const apiUrl = process.env.API_URL || `https://blooming-forest-09372.herokuapp.com/`;
 
 
 class Faq extends Component {
@@ -19,15 +18,15 @@ class Faq extends Component {
 
 
 	async componentDidMount() {
-		try {
-			const res = await axios.get(apiUrl + '/faqs')
-  			.then(res => {
-  				console.log(res.data)
-				this.setState({faq: res.data})
-  			});
-		} catch (err) {
-			console.error(err)
-		}
+		// try {
+		// 	const res = await axios.get(apiUrl + '/faqs')
+  		// 	.then(res => {
+  		// 		console.log(res.data)
+		// 		this.setState({faq: res.data})
+  		// 	});
+		// } catch (err) {
+		// 	console.error(err)
+		// }
 	}
 
 
