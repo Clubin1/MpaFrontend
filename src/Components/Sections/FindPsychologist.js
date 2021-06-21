@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
-//import axios from 'axios';
+import axios from 'axios';
 
 import comm from '../../Assets/community.svg';
 
 
-//const apiUrl = process.env.API_URL || `https://blooming-forest-09372.herokuapp.com/`;
+const apiUrl = process.env.API_URL || `https://blooming-forest-09372.herokuapp.com`;
 
 
 class FindPsychologist extends Component {
@@ -17,14 +17,15 @@ class FindPsychologist extends Component {
     }
 
     async componentDidMount() {
-        // try {
-        //     const res = await axios.get(apiUrl + '/homepages').then(res => {
-        //         console.log(res.data)
-        //         this.setState({findpsychologist: res.data})
-        //     });
-        // } catch (err) {
-        //     console.error(err)
-        // }
+        try {
+            const res = await axios.get(apiUrl + '/homepages').then(res => {
+                console.log(res.data)
+                this.setState({findpsychologist: res.data})
+            });
+            console.log(res)
+        } catch (err) {
+            console.error(err)
+        }
     }
 
 

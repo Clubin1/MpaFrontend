@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Container} from 'react-bootstrap';
-
-//const apiUrl = process.env.API_URL || `https://blooming-forest-09372.herokuapp.com`;
+import axios from 'axios'
+const apiUrl = process.env.API_URL || `https://blooming-forest-09372.herokuapp.com`;
 
 
 class Professionals extends Component {
@@ -15,14 +15,15 @@ class Professionals extends Component {
 
 
     async componentDidMount() {
-        // try {
-        //     const res = await axios.get(apiUrl + '/propages').then(res => {
-        //         console.log(res.data)
-        //         this.setState({propage: res.data})
-        //     });
-        // } catch (err) {
-        //     console.error(err)
-        // }
+        try {
+            const res = await axios.get(apiUrl + '/propages').then(res => {
+                console.log(res.data)
+                this.setState({propage: res.data})
+            });
+            console.log(res)
+        } catch (err) {
+            console.error(err)
+        }
     }
 
 
