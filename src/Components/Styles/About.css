@@ -1,0 +1,63 @@
+.aboutSection {
+	margin-top: 10rem;
+	color: #252525;
+}
+
+
+.servingCaption, .psychologistCaption {
+	width: 80%;
+}
+
+.psychologistSection, .servingSection {
+	color: #252525;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	padding-left: 1rem;
+	border-left: 1px solid rgb(211, 211, 211);
+}
+
+
+.aboutHeader, .servingHeader, .psychologistHeader {
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+.boardSection {
+	color: #252525;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+.boardHeader {
+	font-weight: 800;
+	text-transform: uppercase;
+
+}
+
+.threeSection {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+hr {
+	background-color: rgb(211, 211, 211);
+}
+
+.boardMembers {
+	margin: 1rem;
+}
+
+.boardMembersName {
+	font-weight: 800;
+}
+
+.boardMembersPosition {
+	color: #800000;
+}
+
+@media (max-width: 767px) {
+
+	.servingCaption, .psychologistCaption {
+		width: 100%;
+	}
+  
+}

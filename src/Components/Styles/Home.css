@@ -1,0 +1,100 @@
+/* LANDING SECTION  */
+
+#landing {
+	height: 30vh;
+	background-repeat: no-repeat!important;
+	background-size: contain!important;
+	width: 100vw;
+	background: linear-gradient(
+                     rgba(0, 0, 0, 0.83), 
+                     rgba(0, 0, 0, 0.83)),url("https://github.com/eliameshie/mpa-website/blob/master/img/MPAlogo2.jpeg?raw=true");
+}
+.landingUnder{
+	height: 7vh;
+	background-color: #161616;
+	color:#424242;
+}
+#landing2 {
+	height:50vh;
+	background-color: #1D1D1D;
+}
+.landingImage {
+
+}
+
+.landingTitle {
+	font-weight: 900;
+	text-transform: uppercase;
+	color: #800000;
+}
+
+.landingHeading {
+	font-weight: 900;
+	color: white;
+}
+
+.landingCaption {
+	color: gray;
+}
+
+.landingButtons {
+	margin: 1rem;
+}
+
+.landingButton {
+	background-color: #800000;
+	padding: 0.75rem 0.75rem;
+	border-radius: 0.125rem;
+	color: white;
+}
+
+.landingButton:hover, .findButton:hover {
+	color: white;
+	text-decoration: none;
+}
+
+/* FIND PSYCHOLOGIST SECTION */
+
+#find {
+	padding-top: 10rem;
+	padding-bottom: 10rem;
+	margin-bottom: 5rem;
+	background-color: white;
+	text-align: center;
+}
+
+.findHeader {
+	font-weight: 900;
+	color: black;
+}
+
+.findCaption {
+	margin-bottom: 2rem;
+}
+
+.findButton {
+	background-color: #800000;
+	padding: 0.75rem 0.75rem;
+	border-radius: 0.125rem;
+	color: white;
+	margin-bottom: 4rem;
+}
+
+.findImage {
+	width: 100%;
+}
+
+@media (max-width: 767px) {
+
+	#landing{
+		height: 24rem;
+		text-align: center;
+	}
+	.landingUnder{
+		height: 3.5rem;
+	}
+
+	.wrapper{
+		text-align: center!important;
+	}
+}

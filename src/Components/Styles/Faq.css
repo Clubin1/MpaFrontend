@@ -1,0 +1,33 @@
+
+.faqSection {
+	margin-top: 5rem;
+	margin-bottom: 10rem;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.faqTitle {
+	color: rgb(27, 27, 27);
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.accordion-header {
+	background-color: black!important;
+}
+
+.accordion-button {
+	background-color: white;
+	color: black;
+	font-weight: 700;
+
+}
+
+.accordion-body {
+	background-color: #ececec;
+	color: rgb(24, 24, 24);
+}
+
+.accordion-collapse {
+	background-color: white;
+}
