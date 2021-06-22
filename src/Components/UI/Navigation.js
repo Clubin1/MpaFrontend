@@ -12,7 +12,7 @@ const Navigation = () => {
                     <Link to="/" className="navbar-brand">
                         <img alt="mpa logo" className="mpalogo" src="/images/mpalogo.png"/>
                     </Link>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <button className="navbar-toggler" type="button"data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarResponsive">
@@ -21,7 +21,7 @@ const Navigation = () => {
                                 <Link to="/" className="nav-link">HOME</Link>
                             </li>
                             <li class="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="!#"  id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a className="nav-link dropdown-toggle" href="!#"   id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 		            ABOUT
 		        	</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -30,7 +30,7 @@ const Navigation = () => {
                                     <a class="dropdown-item" href="/resources">Resources</a>
                                 </div>
                             </li>
-                            <div className="nav-color">
+                            <div className="nav">
                                 <li className="nav-item">
                                     <Link to="/membership" className="nav-link">PROFESSIONALS</Link>
                                 </li>
