@@ -30,7 +30,7 @@ function Payment() {
                                 checkout ? (
                                     <Paypal/>) : (
                                     <a    
-                                    href="!#"                                
+                                    href="#!"
                                      className="landingButton" onClick={
                                         () => {
                                             setCheckOut(true);
@@ -51,7 +51,7 @@ function Payment() {
                                 checkout2 ? (
                                     <Paypal2/>) : (
                                     <a
-                                    href="!#"  
+                                    href="#!"
                                      className="landingButton" onClick={
                                         () => {
                                             setCheckOut2(true);
