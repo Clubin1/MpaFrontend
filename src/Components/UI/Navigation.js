@@ -16,7 +16,7 @@ const Navigation = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarResponsive">
-                        <ul className="navbar-nav ml-auto">
+                        <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
                                 <Link to="/" className="nav-link">HOME</Link>
                             </li>
