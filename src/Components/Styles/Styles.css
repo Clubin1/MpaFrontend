@@ -473,6 +473,7 @@ fieldset {
 	height: 7vh;
 	background-color: #161616;
 	color:#424242;
+  min-height: 7vh;
 }
 
 
@@ -839,4 +840,16 @@ a{
 .failure {
   opacity: 1;
   color: red;
+}
+
+@media (max-width:767px){
+  #footer {
+    background-color: #161616;
+    text-align: center;
+    z-index: auto;
+    width: 98.4vw!important;
+  }
+  .upperFooter{
+    height:4rem;
+  }
 }
