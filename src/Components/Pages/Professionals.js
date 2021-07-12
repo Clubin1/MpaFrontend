@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {Container} from 'react-bootstrap';
-import axios from 'axios'
-const apiUrl = process.env.API_URL || `https://blooming-forest-09372.herokuapp.com`;
 
 
 class Professionals extends Component {
@@ -15,15 +13,13 @@ class Professionals extends Component {
 
 
     async componentDidMount() {
-        try {
-            const res = await axios.get(apiUrl + '/propages').then(res => {
-                console.log(res.data)
-                this.setState({propage: res.data})
-            });
-            console.log(res)
-        } catch (err) {
-            console.error(err)
+        let response = await fetch('https://blooming-forest-09372.herokuapp.com/propages')
+        if (! response.ok) {
+            return
         }
+        let info = await response.json()
+
+        this.setState({propage: info})
     }
 
 
