@@ -32,7 +32,7 @@ class Faq extends Component {
 
 	render() {
 		return (
-			<Container>
+			<Container className="thing">
 				<h1 className="faqTitle offset2">Frequently Asked Questions</h1>
 
 			<div className="faqSection ">

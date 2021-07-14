@@ -1,35 +1,27 @@
-import React, {Component} from 'react';
 import {Container} from 'react-bootstrap';
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 
+const apiUrl = process.env.API_URL || `https://blooming-forest-09372.herokuapp.com/`;
 
-class Professionals extends Component {
-    constructor(props) {
-        super(props);
+const Professionals = () => {
+    let [state, setState] = useState([]);
 
-        this.state = {
-            propage: []
-        }
-    }
+	async function fetchData() {
+		let response = await axios(`${apiUrl}propages`)
+		let data = await response.data
 
-
-    async componentDidMount() {
-        let response = await fetch('https://blooming-forest-09372.herokuapp.com/propages')
-        if (! response.ok) {
-            return
-        }
-        let info = await response.json()
-
-        this.setState({propage: info})
-    }
-
-
-    render() {
-
+		setState(data)
+	}
+	useEffect(() => {
+        fetchData();
+    }, []);
+	
         return (
             <div>
                 <div className="offset professional-section">
                     <Container> {
-                        this.state.propage.map((pro, index) => <div key={index}>
+                        state.map((pro, index) => <div key={index}>
                             <div key={
                                 index + 1
                             }>
@@ -62,7 +54,6 @@ class Professionals extends Component {
                 </div>
             </div>
         );
-    }
 }
 
 export default Professionals;

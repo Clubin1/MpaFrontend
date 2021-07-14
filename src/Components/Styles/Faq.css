@@ -5,6 +5,10 @@
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
+.thing{
+	height: 70rem;
+	min-height: 50vh;
+}
 .faqTitle {
 	color: rgb(27, 27, 27);
 	font-weight: 600;

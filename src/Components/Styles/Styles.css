@@ -127,7 +127,8 @@ body:fade {
 }
 
 .faq-section{
-  height: 50rem;
+  height: 70rem;	
+  min-height: 50vh;
 }
 
 .Card{
@@ -700,7 +701,8 @@ section {
 }
 
 .professional-section{
-  height: 50rem;
+  height: 70rem;	
+  min-height: 50vh;
 }
 
 .professionalsImage{
@@ -740,8 +742,8 @@ section {
 }
 
 .payment-section{
-  height: auto;
-  min-height: 40rem;
+  height: 70rem;	
+  min-height: 50vh;
 }
 
 .position{

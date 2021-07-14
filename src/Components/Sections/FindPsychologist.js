@@ -1,28 +1,24 @@
-import React, {Component} from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 
 import comm from '../../Assets/community.svg';
 
+const apiUrl = process.env.API_URL || `https://blooming-forest-09372.herokuapp.com/`;
 
-class FindPsychologist extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            findpsychologist: []
-        }
-    }
+const FindPsychologist = () => {
+    let [state, setState] = useState([]);
 
-    async componentDidMount() {
-        let response = await fetch('https://blooming-forest-09372.herokuapp.com/homepages')
-        if (! response.ok) {
-            return
-        }
-        let info = await response.json()
+	async function fetchData() {
+		let response = await axios(`${apiUrl}homepages`)
+		let data = await response.data
 
-        this.setState({findpsychologist: info})
-    }
-    render() {
-
+		setState(data)
+	}
+	useEffect(() => {
+        fetchData();
+    }, []);
+	
 
         return (
             <div id="find">
@@ -30,7 +26,7 @@ class FindPsychologist extends Component {
                     <Row>
                         <Col md={5}>
                             <div> {
-                                this.state.findpsychologist.map((home, index) => <div key={index}>
+                                state.map((home, index) => <div key={index}>
                                     <div key={
                                         index + 1
                                     }>
@@ -62,7 +58,6 @@ class FindPsychologist extends Component {
 
             </div>
         );
-    }
 }
 
 
