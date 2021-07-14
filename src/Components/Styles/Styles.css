@@ -69,7 +69,7 @@ body:fade {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  color: #752F37;
+  color: #ffffff;
   padding-top: .8rem;
 }
 
@@ -121,7 +121,6 @@ body:fade {
 }
 
 .contact-section{
-  height: 40rem;
 }
 .resource-section{
   height: 63rem;
@@ -485,7 +484,9 @@ section {
   font-weight: 700;
   text-decoration: underline;
 }
-
+.s{
+  height: 50rem;
+}
 .footer-distributed {
   background-color: #1D1D1D;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -879,4 +880,10 @@ a{
     z-index: auto;
     width: 96.4vw!important;
   }
+}
+
+
+.twotime{
+  font-weight: 600;
+  text-align: center;
 }

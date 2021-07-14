@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import ContactLanding from '../Sections/ContactLanding';
 import '../../Components/Styles/Styles.css';
 import {Container} from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
@@ -40,11 +39,13 @@ const Contact = () => {
         return (
             
             <div>
-                <ContactLanding/>
                 <Container>
                     <div className="s">
+                        
                         <div id="contact-wrapper">
+                            
                             <div class="contact-container">
+                                
                                 <form onSubmit={handleSubmit(onSubmit)} id="con">
                                 <h6 className='status-message'>{statusMessage}</h6>
                                     <h3>Contact Form</h3>

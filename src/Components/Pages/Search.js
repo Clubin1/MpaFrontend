@@ -35,20 +35,35 @@ const App = () => {
 
     if (input.length > 0) {
         state = state.filter((i) => {
-            return i.name.toLowerCase().match(input.toLowerCase())
+            if(i.insuranceAccepted !== null && i.specialties !== null){
+                return (
+                    i.name.toLowerCase().match(input.toLowerCase()) ||
+                    i.zip.toLowerCase().match(input.toLowerCase()) ||
+                    i.specialties.toLowerCase().match(input.toLowerCase()) ||
+                    i.insuranceAccepted.toLowerCase().match(input.toLowerCase())
+                )
+            }
+            else{
+                return(
+                    ""
+                )
+            }
+            
         });
+    
     }
-
+    
     return (
         <div>
             <div id="landing" className="offset asd">
-                <h6 className="landingTitle">MPACHARLOTTE.ORG</h6>
-                <h1 className="landingHeading">FIND A PSYCHOLOGIST</h1>
-                <p className="landingCaption">
-                    Look for a psychologist close to you or for your needs. Search for
-                              disorders, location and name
-                </p>
-
+                <Container>
+                    <h6 className="landingTitle">MPACHARLOTTE.ORG</h6>
+                    <h1 className="landingHeading">FIND A PSYCHOLOGIST</h1>
+                    <p className="landingCaption">
+                        Look for a psychologist close to you or for your needs. Search for
+                                disorders, location and name
+                    </p>
+                </Container>
             </div>
             <div className="landingUnder">
                 <Container>
@@ -58,14 +73,26 @@ const App = () => {
             <div className="card-section offset">
                 <Container>
                     <div className="card-center">
-                        <h1 className="searchTitle">Search Engine</h1>
-                        <div className="search-section"></div>
+                    <div id="searchbar">
+                            <input type="text"
+                                onChange={handleChange}
+                                value={input}
+                                name="query"
+                                maxlength="21"
+                                placeholder="Search..."
+                                class="searchbar"/>
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png" alt="Magnifying Glass" class="button"/>
+
+                        </div>
 
                         <div className="asdasd">
-                            <p className="search-info">
-                                Search for disorders, location and name Welcome to the Mecklenburg
+                            <p className="search-info twotime">
+                            Search for disorders, location and name Welcome to the Mecklenburg
                                 				Psychological Association (MPA) Psychologist Membership & Referral
-                                				Directory. The Mecklenburg Psychological Association provides this
+                                				Directory.
+                            </p>
+                            <p className="search-info">
+                                The Mecklenburg Psychological Association provides this
                                 				service as a way for you to find licensed psychologists in your
                                 				area. Using our search engine, you will receive a list of
                                 				psychologists whose self-described services match with your needs.
@@ -100,18 +127,6 @@ const App = () => {
                                 				assumes no liability in the event you are not satisfied or helped
                                 				by a psychologist you choose to meet with from this list.
                             </p>
-                        </div>
-                        <div className="search-section"></div>
-                        <div id="searchbar">
-                            <input type="text"
-                                onChange={handleChange}
-                                value={input}
-                                name="query"
-                                maxlength="21"
-                                placeholder="Search..."
-                                class="searchbar"/>
-                            <img src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png" alt="Magnifying Glass" class="button"/>
-
                         </div>
 
                     </div>
