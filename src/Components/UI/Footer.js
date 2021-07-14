@@ -16,7 +16,6 @@ const Footer = () => {
 				</Row>
 
 				<Row noGutters={true} className="footer-distributed">
-					<Col md={6}>
 						<div className="footer-left">
 							<p className="footer-links">
 								<a className="link-1" href="/">Home</a>
@@ -29,9 +28,8 @@ const Footer = () => {
 
 								<a href="/contact">Contact</a>
 							</p>
-							<p>Mecklenburg Psychological Association &copy; 2019. All rights reserved</p>
+							<p>Mecklenburg Psychological Association &copy; 2021. All rights reserved</p>
 						</div>
-					</Col>
 					
 			</Row>
 		</div>

@@ -66,6 +66,7 @@ body:fade {
 .navbar-nav li{
   padding-right: 3rem;
   float: right;
+  font-size: 1rem;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -99,6 +100,7 @@ body:fade {
   background-color: #161616;
   text-align: center;
   z-index: auto;
+  width:99.4%!important;
 }
 
 .footerLogo {
@@ -780,7 +782,7 @@ a{
     text-align: center!important;
   }
   #footer{
-    width: 96.1%!important;
+    width: 100vw!important;
   }
   .contact-land{
     height: 15rem!important;
