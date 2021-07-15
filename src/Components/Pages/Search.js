@@ -122,6 +122,7 @@ const App = () => {
 
                             <label>Insurance: </label>
                             <select id="insurance" onChange={handleChange}>
+                                <option value=""></option>
                                 <option value="None">None</option>
                                 <option value="Accepts Out Of Network Benefits">Accepts Out Of Network Benefits</option>
                                 <option value="Aetna">Aetna</option>
@@ -144,9 +145,10 @@ const App = () => {
                                 <option value="Wellpath">Wellpath</option>
 
                             </select>
+                            
                             <label>Disorders: </label>
-                            <select onChange={handleChange}
-                                id="disorders">
+                            <select onChange={handleChange} id="disorders">
+                                <option value=""></option>
                                 <option value="Adoption">Adoption</option>
                                 <option value="ADHD">ADHD</option>
                                 <option value="Anger Management">Anger Management</option>
