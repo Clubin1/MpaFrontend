@@ -9,16 +9,15 @@ const apiUrl = process.env.API_URL || `https://blooming-forest-09372.herokuapp.c
 const FindPsychologist = () => {
     let [state, setState] = useState([]);
 
-	async function fetchData() {
-		let response = await axios(`${apiUrl}homepages`)
-		let data = await response.data
-
-		setState(data)
-	}
-	useEffect(() => {
-        fetchData();
-    }, []);
-	
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await axios(
+                `${apiUrl}homepages`
+            )
+            setState(result.data)
+        }
+        fetchData()
+    }, [])
 
         return (
             <div id="find">
