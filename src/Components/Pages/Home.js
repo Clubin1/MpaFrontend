@@ -41,21 +41,15 @@ const Home = () => {
                         <Col md={5}>
                             <div> {
                                 state.map((home, index) => <div key={index}>
-                                    <div key={
-                                        index + 1
-                                    }>
+                                    <div>
                                         <h1 className="findHeader">
-                                            {
-                                            home.findpsychHeader
-                                        }</h1>
+                                        Find A Psychologist</h1>
                                         <p className="findCaption">
-                                            {
-                                            home.findpsychDesc
-                                        }</p>
+                                        Locate Licensed Psychologists in the Charlotte, North Carolina area who actively participate in their local professional association so they can keep up with the latest healthcare trends, share proven therapeutic techniques, and preserve the highest ethical standards for treatment of patients.
+
+</p>
                                         <a className="findButton" href="/search">
-                                            {
-                                            home.findpsychButton
-                                        }</a>
+                                            Find a Psychologist</a>
                                     </div>
                                 </div>)
                             } </div>
