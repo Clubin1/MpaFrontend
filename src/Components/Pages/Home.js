@@ -39,8 +39,7 @@ const Home = () => {
                 <Container>
                     <Row>
                         <Col md={5}>
-                            <div> {
-                                state.map((home, index) => <div key={index}>
+                            <div> 
                                     <div>
                                         <h1 className="findHeader">
                                         Find A Psychologist</h1>
@@ -51,8 +50,7 @@ const Home = () => {
                                         <a className="findButton" href="/search">
                                             Find a Psychologist</a>
                                     </div>
-                                </div>)
-                            } </div>
+                            </div>
                         </Col>
 
                         <Col md={7}>

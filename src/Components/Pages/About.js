@@ -1,30 +1,27 @@
 import {Container, Row, Col} from 'react-bootstrap';
-import React, {useState, useEffect} from "react";
+import React from "react";
 
 import '../../Components/Styles/About.css';
 import BoardMembers from '../../Components/Sections/BoardMembers.js';
 
 
 const About = () => {
-	let [state, setState] = useState([]);
+	// let [state, setState] = useState([]);
 	
-    useEffect(() => {
-        getInfo().then(state => setState(state))
-    }, [])
+    // useEffect(() => {
+    //     getInfo().then(state => setState(state))
+    // }, [])
 
-	const getInfo = () => {
-		return fetch('https://blooming-forest-09372.herokuapp.com/aboutpages').then(response => response.json())
-	}
+	// const getInfo = () => {
+	// 	return fetch('https://blooming-forest-09372.herokuapp.com/aboutpages').then(response => response.json())
+	// }
 	
     return (
         <div className="wrapper">
-            {
-            state.map((about, index) => <div key={index}>
+            
                 <Container>
                     <div className="aboutSection"
-                        key={
-                            index + 1
-                    }>
+                     >
                         <h1 className="aboutHeader">
                         ABOUT US
 </h1>
@@ -39,9 +36,7 @@ const About = () => {
                         <Row>
                             <Col>
                                 <div className="servingSection"
-                                    key={
-                                        index + 2
-                                }>
+                                    >
                                     <h1 className="servingHeader">
                                     SERVING THE COMMUNITY
 </h1>
@@ -54,9 +49,7 @@ const About = () => {
 
                             <Col>
                                 <div className="psychologistSection"
-                                    key={
-                                        index + 3
-                                }>
+                                   >
                                     <h1 className="psychologistHeader">
                                     PSYCHOLOGIST SERVICES
 </h1>
@@ -74,14 +67,11 @@ const About = () => {
 
                 <Col md={12}>
                     <div className="boardSection"
-                        key={
-                            index + 4
-                    }>
+                       >
                         <BoardMembers/>
                     </div>
                 </Col>
-            </div>)
-        } </div>
+         </div>
     );
 }
 
