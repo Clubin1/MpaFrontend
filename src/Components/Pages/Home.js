@@ -1,25 +1,22 @@
 import React, {useState, useEffect } from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import '../../Components/Styles/Home.css';
-import axios from "axios";
 
 import comm from '../../Assets/community.svg';
-
-const apiUrl = process.env.API_URL || `https://blooming-forest-09372.herokuapp.com/`;
 
 
 const Home = () => {
 	let [state, setState] = useState([]);
-
+	
     useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios(
-                `${apiUrl}homepages`
-            )
-            setState(result.data)
-        }
-        fetchData()
+        getInfo().then(state => setState(state))
     }, [])
+
+	const getInfo = () => {
+		return fetch('https://blooming-forest-09372.herokuapp.com/homepages').then(response => response.json())
+	}
+
+	console.log(state)
 	return (
 		<div>
 			 <div id="landing" className="offset">

@@ -1,21 +1,16 @@
 import {Container} from 'react-bootstrap';
 import React, {useState, useEffect} from "react";
-import axios from "axios";
-
-const apiUrl = process.env.API_URL || `https://blooming-forest-09372.herokuapp.com/`;
 
 const Professionals = () => {
-    let [state, setState] = useState([]);
+	let [state, setState] = useState([]);
+	
+    useEffect(() => {
+        getInfo().then(state => setState(state))
+    }, [])
 
-	async function fetchData() {
-		let response = await axios(`${apiUrl}propages`)
-		let data = await response.data
-
-		setState(data)
+	const getInfo = () => {
+		return fetch('https://blooming-forest-09372.herokuapp.com/propages').then(response => response.json())
 	}
-	useEffect(() => {
-        fetchData();
-    }, []);
 	
         return (
             <div>

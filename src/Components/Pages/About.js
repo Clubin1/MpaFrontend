@@ -1,26 +1,20 @@
 import {Container, Row, Col} from 'react-bootstrap';
 import React, {useState, useEffect} from "react";
-import axios from "axios";
 
 import '../../Components/Styles/About.css';
 import BoardMembers from '../../Components/Sections/BoardMembers.js';
 
 
-const apiUrl = process.env.API_URL || `https://blooming-forest-09372.herokuapp.com/`;
-
-
 const About = () => {
-    let [state, setState] = useState([]);
+	let [state, setState] = useState([]);
+	
+    useEffect(() => {
+        getInfo().then(state => setState(state))
+    }, [])
 
-	async function fetchData() {
-		let response = await axios(`${apiUrl}aboutpages`)
-		let data = await response.data
-
-		setState(data)
+	const getInfo = () => {
+		return fetch('https://blooming-forest-09372.herokuapp.com/aboutpages').then(response => response.json())
 	}
-	useEffect(() => {
-        fetchData();
-    }, []);
 	
     return (
         <div className="wrapper">
