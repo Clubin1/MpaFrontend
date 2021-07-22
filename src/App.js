@@ -15,6 +15,8 @@ import Faq from './Components/Pages/Faq.js';
 import Resources from './Components/Pages/Resources';
 import Payment from './Components/Pages/Payment'
 import NotFound from './Components/Pages/NotFound'
+import dropdown from './Components/Pages/dropdown.js';
+
 const App = () => {
   return (
     <div className="App">
@@ -29,6 +31,8 @@ const App = () => {
           <Route exact path="/faq" component={Faq}/>
           <Route exact path="/resources" component={Resources}/>
           <Route exact path="/payment" component={Payment}/>
+          <Route exact path="/dropdown" component={dropdown}/>
+
           <Route component={NotFound} />
         </Switch>  
       <Footer />
