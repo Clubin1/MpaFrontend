@@ -37,16 +37,21 @@ function Apply() {
     }
 
     function handleInsurance(e) {
-        let insurance = data.insuranceAccepted + " " + e.target.name
+        let insurance = data.insuranceAccepted + ", " + e.target.name
+        insurance = insurance.replace(/^,/, '')
+        insurance = insurance.trimStart()
+
         setData({
             ...data,
             insuranceAccepted: insurance
         })
-        console.log(data)
+        console.log(data.insuranceAccepted)
     }
 
     function handleDisorders(e) {
-        let specialties = data.specialties + " " + e.target.name
+        let specialties = data.specialties + ", " + e.target.name
+        specialties = specialties.replace(/^,/, '')
+        specialties = specialties.trimStart()
         setData({
             ...data,
             specialties: specialties
@@ -54,7 +59,10 @@ function Apply() {
         console.log(data)
     }
     function handleAssessments(e) {
-        let assessmentEvaluations = data.assessmentEvaluations + " " + e.target.name
+        let assessmentEvaluations = data.assessmentEvaluations + ", " + e.target.name
+        assessmentEvaluations = assessmentEvaluations.replace(/^,/, '')
+        assessmentEvaluations = assessmentEvaluations.trimStart()
+
         setData({
             ...data,
             assessmentEvaluations: assessmentEvaluations
@@ -62,7 +70,9 @@ function Apply() {
         console.log(data)
     }
     function handleTreatment(e) {
-        let treatmentModality = data.treatmentModality + " " + e.target.name
+        let treatmentModality = data.treatmentModality + ", " + e.target.name
+        treatmentModality = treatmentModality.replace(/^,/, '')
+        treatmentModality = treatmentModality.trimStart()
         setData({
             ...data,
             treatmentModality: treatmentModality
@@ -70,7 +80,9 @@ function Apply() {
         console.log(data)
     }
     function handlePopulation(e) {
-        let populationsServed = data.populationsServed + " " + e.target.name
+        let populationsServed = data.populationsServed + ", " + e.target.name
+        populationsServed = populationsServed.replace(/^,/, '')
+        populationsServed = populationsServed.trimStart()
         setData({
             ...data,
             populationsServed: populationsServed
@@ -78,7 +90,9 @@ function Apply() {
         console.log(data)
     }
     function handleLanguages(e) {
-        let languages = data.languages + " " + e.target.name
+        let languages = data.languages + ", " + e.target.name
+        languages = languages.replace(/^,/, '')
+        languages = languages.trimStart()
         setData({
             ...data,
             languages: languages
@@ -86,7 +100,9 @@ function Apply() {
         console.log(data)
     }
     function treatmentOrientation(e) {
-        let treatmentOrientation = data.treatmentOrientation + " " + e.target.name
+        let treatmentOrientation = data.treatmentOrientation + ", " + e.target.name
+        treatmentOrientation = treatmentOrientation.replace(/^,/, '')
+        treatmentOrientation = treatmentOrientation.trimStart()
         setData({
             ...data,
             treatmentOrientation: treatmentOrientation
@@ -140,9 +156,9 @@ function Apply() {
                         <h1 className="searchTitle">Application Form</h1>
                         <h5>
                             You may either fill out our digital form, or fill out a pdf version and submit it via email.
-                                                                                                                              Please fill out all fields.
-                                                                                                                              After application is submit and payment is recieved, please wait a
-                                                                                                                              few buisness days to be reflected on the search directory.
+                                                                                                                                                          Please fill out all fields.
+                                                                                                                                                          After application is submit and payment is recieved, please wait a
+                                                                                                                                                          few buisness days to be reflected on the search directory.
 
                         </h5>
 
@@ -745,8 +761,8 @@ function Apply() {
                                         </li>
                                     </ul>
                                 </FormGroup>
-                                <div className="asdasd">
-                
+                                <div className="asdasds">
+
 
                                     <FormGroup className="formWidth">
                                         <Label className="checkLabel">Insurance Accepted:
@@ -846,992 +862,1017 @@ function Apply() {
                                                 <label for="Medcost">
                                                     Medcost</label>
                                             </li>
-                                           <li>
-                                           <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Medicare"
-                                                name="Medicare"
-                                                value="Bike2"></input>
-                                            <label for="Medicare">
-                                                Medicare</label>
-                                           </li>
-                                         <li>
-                                         <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Medicaid"
-                                                name="Medicaid"
-                                                value="Bike3"></input>
-                                            <label for="Medicaid">
-                                                Medicaid</label>
-                                         </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Medicare"
+                                                    name="Medicare"
+                                                    value="Bike2"></input>
+                                                <label for="Medicare">
+                                                    Medicare</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Medicaid"
+                                                    name="Medicaid"
+                                                    value="Bike3"></input>
+                                                <label for="Medicaid">
+                                                    Medicaid</label>
+                                            </li>
 
-                                         <li>
-                                         <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Magellan"
-                                                name="Magellan"
-                                                value="Bike"></input>
-                                            <label for="Magellan">
-                                                Magellan</label>
-                                         </li>
-                                          <li>
-                                          <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="MHN"
-                                                name="MHN"
-                                                value="Bike2"></input>
-                                            <label for="MHN">
-                                                MHN</label>
-                                          </li>
-                                           <li>
-                                           <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="NC Health Choice"
-                                                name="NC Health Choice"
-                                                value="Bike3"></input>
-                                            <label for="NC Health Choice">
-                                                NC Health Choice</label>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Magellan"
+                                                    name="Magellan"
+                                                    value="Bike"></input>
+                                                <label for="Magellan">
+                                                    Magellan</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="MHN"
+                                                    name="MHN"
+                                                    value="Bike2"></input>
+                                                <label for="MHN">
+                                                    MHN</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="NC Health Choice"
+                                                    name="NC Health Choice"
+                                                    value="Bike3"></input>
+                                                <label for="NC Health Choice">
+                                                    NC Health Choice</label>
 
-                                           </li>
-                                         <li>
-                                         <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Primary Physicians Care"
-                                                name="Primary Physicians Care"
-                                                value="Bike"></input>
-                                            <label for="Primary Physicians Care">
-                                                Primary Physicians Care</label>
-                                         </li>
-                                        <li>    <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="TriCare"
-                                                name="TriCare"
-                                                value="Bike2"></input>
-                                            <label for="TriCare">
-                                                TriCare</label></li>
-<li>
-    
-<input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="United Beh. Health"
-                                                name="United Beh. Health"
-                                                value="Bike3"></input>
-                                            <label for="United Beh. Health">
-                                                United Beh. Health</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Primary Physicians Care"
+                                                    name="Primary Physicians Care"
+                                                    value="Bike"></input>
+                                                <label for="Primary Physicians Care">
+                                                    Primary Physicians Care</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="TriCare"
+                                                    name="TriCare"
+                                                    value="Bike2"></input>
+                                                <label for="TriCare">
+                                                    TriCare</label>
+                                            </li>
+                                            <li>
 
-</li>
-                                           <li>
-                                           <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Value Options"
-                                                name="Value Options"
-                                                value="Bike"></input>
-                                            <label for="Value Options">
-                                                Value Options</label>
-                                           </li>
-                                          <li>
-                                          <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Wellpath"
-                                                name="Wellpath"
-                                                value="Bike2"></input>
-                                            <label for="Wellpath">
-                                                Wellpath</label>
-                                          </li>
-                                         <li>
-                                         <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="None"
-                                                name="None"
-                                                value="Bike"></input>
-                                            <label for="None">
-                                                None</label>
-                                         </li>
-                                          <li>
-                                          <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Accepts Out Of Network Benefits"
-                                                name="Accepts Out Of Network Benefits"
-                                                value="Bike2"></input>
-                                            <label for="Accepts Out Of Network Benefits">
-                                                Accepts Out Of Network Benefits</label>
-                                          </li>
-                                           <li>
-                                           <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Aetna"
-                                                name="Aetna"
-                                                value="Bike3"></input>
-                                            <label for="Aetna">
-                                                Aetna</label>
-                                           </li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="United Beh. Health"
+                                                    name="United Beh. Health"
+                                                    value="Bike3"></input>
+                                                <label for="United Beh. Health">
+                                                    United Beh. Health</label>
 
-                                        <li>    <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="BC/BS"
-                                                name="BC/BS"
-                                                value="Bike"></input>
-                                            <label for="BC/BS">
-                                                BC/BS</label></li>
-<li>
-    
-<input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="BC/BS Blue Value"
-                                                name="BC/BS Blue Value"
-                                                value="Bike2"></input>
-                                            <label for="BC/BS Blue Value">
-                                                BC/BS Blue Value</label>
-</li>
-                                          <li>
-                                          <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="BC/BS State Employee Plan"
-                                                name="BC/BS State Employee Plan"
-                                                value="Bike3"></input>
-                                            <label for="BC/BS State Employee Plan">
-                                                BC/BS State Employee Plan</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Value Options"
+                                                    name="Value Options"
+                                                    value="Bike"></input>
+                                                <label for="Value Options">
+                                                    Value Options</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Wellpath"
+                                                    name="Wellpath"
+                                                    value="Bike2"></input>
+                                                <label for="Wellpath">
+                                                    Wellpath</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="None"
+                                                    name="None"
+                                                    value="Bike"></input>
+                                                <label for="None">
+                                                    None</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Accepts Out Of Network Benefits"
+                                                    name="Accepts Out Of Network Benefits"
+                                                    value="Bike2"></input>
+                                                <label for="Accepts Out Of Network Benefits">
+                                                    Accepts Out Of Network Benefits</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Aetna"
+                                                    name="Aetna"
+                                                    value="Bike3"></input>
+                                                <label for="Aetna">
+                                                    Aetna</label>
+                                            </li>
 
-                                          </li>
-                                           <li>
-                                           <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="BC/BS Federal Plan"
-                                                name="BC/BS Federal Plan"
-                                                value="Bike"></input>
-                                            <label for="BC/BS Federal Plan">
-                                                BC/BS Federal Plan</label>
-                                           </li>
-                                         <li>   <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="CBHA"
-                                                name="CBHA"
-                                                value="Bike2"></input>
-                                            <label for="CBHA">
-                                                CBHA</label></li>
-                                           <li>
-                                           <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Cigna"
-                                                name="Cigna"
-                                                value="Bike3"></input>
-                                            <label for="Cigna">
-                                                Cigna</label>
-                                           </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="BC/BS"
+                                                    name="BC/BS"
+                                                    value="Bike"></input>
+                                                <label for="BC/BS">
+                                                    BC/BS</label>
+                                            </li>
+                                            <li>
 
-                                          <li>
-                                          <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Medcost"
-                                                name="Medcost"
-                                                value="Bike"></input>
-                                            <label for="Medcost">
-                                                Medcost</label>
-                                          </li>
-                                          <li>  <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Medicare"
-                                                name="Medicare"
-                                                value="Bike2"></input>
-                                            <label for="Medicare">
-                                                Medicare</label></li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="BC/BS Blue Value"
+                                                    name="BC/BS Blue Value"
+                                                    value="Bike2"></input>
+                                                <label for="BC/BS Blue Value">
+                                                    BC/BS Blue Value</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="BC/BS State Employee Plan"
+                                                    name="BC/BS State Employee Plan"
+                                                    value="Bike3"></input>
+                                                <label for="BC/BS State Employee Plan">
+                                                    BC/BS State Employee Plan</label>
 
-                                       <li>
-                                       <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Medicaid"
-                                                name="Medicaid"
-                                                value="Bike3"></input>
-                                            <label for="Medicaid">
-                                                Medicaid</label>
-                                       </li>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="BC/BS Federal Plan"
+                                                    name="BC/BS Federal Plan"
+                                                    value="Bike"></input>
+                                                <label for="BC/BS Federal Plan">
+                                                    BC/BS Federal Plan</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="CBHA"
+                                                    name="CBHA"
+                                                    value="Bike2"></input>
+                                                <label for="CBHA">
+                                                    CBHA</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Cigna"
+                                                    name="Cigna"
+                                                    value="Bike3"></input>
+                                                <label for="Cigna">
+                                                    Cigna</label>
+                                            </li>
 
-                                          <li>  <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Magellan"
-                                                name="Magellan"
-                                                value="Bike"></input>
-                                            <label for="Magellan">
-                                                Magellan</label></li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Medcost"
+                                                    name="Medcost"
+                                                    value="Bike"></input>
+                                                <label for="Medcost">
+                                                    Medcost</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Medicare"
+                                                    name="Medicare"
+                                                    value="Bike2"></input>
+                                                <label for="Medicare">
+                                                    Medicare</label>
+                                            </li>
 
-                                         <li>   <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="MHN"
-                                                name="MHN"
-                                                value="Bike2"></input>
-                                            <label for="MHN">
-                                                MHN</label>
-                                                </li>
-                                           <li>
-                                           <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="NC Health Choice"
-                                                name="NC Health Choice"
-                                                value="Bike3"></input>
-                                            <label for="NC Health Choice">
-                                                NC Health Choice</label>
-                                           </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Medicaid"
+                                                    name="Medicaid"
+                                                    value="Bike3"></input>
+                                                <label for="Medicaid">
+                                                    Medicaid</label>
+                                            </li>
 
-                                         <li>
-                                         <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Primary Physicians Care"
-                                                name="Primary Physicians Care"
-                                                value="Bike"></input>
-                                            <label for="Primary Physicians Care">
-                                                Primary Physicians Care</label>
-                                         </li>
-                                          <li>
-                                          <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="TriCare"
-                                                name="TriCare"
-                                                value="Bike2"></input>
-                                            <label for="TriCare">
-                                                TriCare</label>
-                                          </li>
-                                        <li>
-                                        <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="United Beh. Health"
-                                                name="United Beh. Health"
-                                                value="Bike3"></input>
-                                            <label for="United Beh. Health">
-                                                United Beh. Health</label>
-                                        </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Magellan"
+                                                    name="Magellan"
+                                                    value="Bike"></input>
+                                                <label for="Magellan">
+                                                    Magellan</label>
+                                            </li>
 
-                                          <li>  <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Value Options"
-                                                name="Value Options"
-                                                value="Bike"></input>
-                                            <label for="Value Options">
-                                                Value Options</label></li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="MHN"
+                                                    name="MHN"
+                                                    value="Bike2"></input>
+                                                <label for="MHN">
+                                                    MHN</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="NC Health Choice"
+                                                    name="NC Health Choice"
+                                                    value="Bike3"></input>
+                                                <label for="NC Health Choice">
+                                                    NC Health Choice</label>
+                                            </li>
 
-                                        <li>
-                                        <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Wellpath"
-                                                name="Wellpath"
-                                                value="Bike2"></input>
-                                            <label for="Wellpath">
-                                                Wellpath</label>
-                                                </li>
-                                         <li>
-                                         <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Accepts Out Of Network Benefits"
-                                                name="Accepts Out Of Network Benefits"
-                                                value="Bike2"></input>
-                                            <label for="Accepts Out Of Network Benefits">
-                                                Accepts Out Of Network Benefits</label>
-                                         </li>
-                                           <li>
-                                           <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Aetna"
-                                                name="Aetna"
-                                                value="Bike3"></input>
-                                            <label for="Aetna">
-                                                Aetna</label>
-                                           </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Primary Physicians Care"
+                                                    name="Primary Physicians Care"
+                                                    value="Bike"></input>
+                                                <label for="Primary Physicians Care">
+                                                    Primary Physicians Care</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="TriCare"
+                                                    name="TriCare"
+                                                    value="Bike2"></input>
+                                                <label for="TriCare">
+                                                    TriCare</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="United Beh. Health"
+                                                    name="United Beh. Health"
+                                                    value="Bike3"></input>
+                                                <label for="United Beh. Health">
+                                                    United Beh. Health</label>
+                                            </li>
+
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Value Options"
+                                                    name="Value Options"
+                                                    value="Bike"></input>
+                                                <label for="Value Options">
+                                                    Value Options</label>
+                                            </li>
+
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Wellpath"
+                                                    name="Wellpath"
+                                                    value="Bike2"></input>
+                                                <label for="Wellpath">
+                                                    Wellpath</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Accepts Out Of Network Benefits"
+                                                    name="Accepts Out Of Network Benefits"
+                                                    value="Bike2"></input>
+                                                <label for="Accepts Out Of Network Benefits">
+                                                    Accepts Out Of Network Benefits</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Aetna"
+                                                    name="Aetna"
+                                                    value="Bike3"></input>
+                                                <label for="Aetna">
+                                                    Aetna</label>
+                                            </li>
 
 
-                                        <li>
-                                        <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="BC/BS"
-                                                name="BC/BS"
-                                                value="Bike"></input>
-                                            <label for="BC/BS">
-                                                BC/BS</label>
-                                        </li>
-                                        <li>    <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="BC/BS Blue Value"
-                                                name="BC/BS Blue Value"
-                                                value="Bike2"></input>
-                                            <label for="BC/BS Blue Value">
-                                                BC/BS Blue Value</label></li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="BC/BS"
+                                                    name="BC/BS"
+                                                    value="Bike"></input>
+                                                <label for="BC/BS">
+                                                    BC/BS</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="BC/BS Blue Value"
+                                                    name="BC/BS Blue Value"
+                                                    value="Bike2"></input>
+                                                <label for="BC/BS Blue Value">
+                                                    BC/BS Blue Value</label>
+                                            </li>
 
-                                         <li>   <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="BC/BS State Employee Plan"
-                                                name="BC/BS State Employee Plan"
-                                                value="Bike3"></input>
-                                            <label for="BC/BS State Employee Plan">
-                                                BC/BS State Employee Plan</label>
-</li>
-                                           <li>
-                                           <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="BC/BS Federal Plan"
-                                                name="BC/BS Federal Plan"
-                                                value="Bike"></input>
-                                            <label for="BC/BS Federal Plan">
-                                                BC/BS Federal Plan</label>
-                                           </li>
-                                         <li>
-                                         <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="CBHA"
-                                                name="CBHA"
-                                                value="Bike2"></input>
-                                            <label for="CBHA">
-                                                CBHA</label>
-                                         </li>
-                                          <li>
-                                          <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Cigna"
-                                                name="Cigna"
-                                                value="Bike3"></input>
-                                            <label for="Cigna">
-                                                Cigna</label>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="BC/BS State Employee Plan"
+                                                    name="BC/BS State Employee Plan"
+                                                    value="Bike3"></input>
+                                                <label for="BC/BS State Employee Plan">
+                                                    BC/BS State Employee Plan</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="BC/BS Federal Plan"
+                                                    name="BC/BS Federal Plan"
+                                                    value="Bike"></input>
+                                                <label for="BC/BS Federal Plan">
+                                                    BC/BS Federal Plan</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="CBHA"
+                                                    name="CBHA"
+                                                    value="Bike2"></input>
+                                                <label for="CBHA">
+                                                    CBHA</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Cigna"
+                                                    name="Cigna"
+                                                    value="Bike3"></input>
+                                                <label for="Cigna">
+                                                    Cigna</label>
 
-                                          </li>
-                                          <li>
-                                          <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Medcost"
-                                                name="Medcost"
-                                                value="Bike"></input>
-                                            <label for="Medcost">
-                                                Medcost</label>
-                                          </li>
-                                         <li>
-                                         <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Medicare"
-                                                name="Medicare"
-                                                value="Bike2"></input>
-                                            <label for="Medicare">
-                                                Medicare</label>
-                                         </li>
-                                           <li>
-                                           <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Medicaid"
-                                                name="Medicaid"
-                                                value="Bike3"></input>
-                                            <label for="Medicaid">
-                                                Medicaid</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Medcost"
+                                                    name="Medcost"
+                                                    value="Bike"></input>
+                                                <label for="Medcost">
+                                                    Medcost</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Medicare"
+                                                    name="Medicare"
+                                                    value="Bike2"></input>
+                                                <label for="Medicare">
+                                                    Medicare</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Medicaid"
+                                                    name="Medicaid"
+                                                    value="Bike3"></input>
+                                                <label for="Medicaid">
+                                                    Medicaid</label>
 
-                                           </li>
-                                          <li>
-                                          <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Magellan"
-                                                name="Magellan"
-                                                value="Bike"></input>
-                                            <label for="Magellan">
-                                                Magellan</label>
-                                          </li>
-                                         <li>
-                                         <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="MHN"
-                                                name="MHN"
-                                                value="Bike2"></input>
-                                            <label for="MHN">
-                                                MHN</label>
-                                         </li>
-                                         <li>
-                                         <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="NC Health Choice"
-                                                name="NC Health Choice"
-                                                value="Bike3"></input>
-                                            <label for="NC Health Choice">
-                                                NC Health Choice</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Magellan"
+                                                    name="Magellan"
+                                                    value="Bike"></input>
+                                                <label for="Magellan">
+                                                    Magellan</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="MHN"
+                                                    name="MHN"
+                                                    value="Bike2"></input>
+                                                <label for="MHN">
+                                                    MHN</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="NC Health Choice"
+                                                    name="NC Health Choice"
+                                                    value="Bike3"></input>
+                                                <label for="NC Health Choice">
+                                                    NC Health Choice</label>
 
-                                         </li>
-                                          <li>
-                                          <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Primary Physicians Care"
-                                                name="Primary Physicians Care"
-                                                value="Bike"></input>
-                                            <label for="Primary Physicians Care">
-                                                Primary Physicians Care</label>
-                                          </li>
-                                         <li>
-                                         <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="TriCare"
-                                                name="TriCare"
-                                                value="Bike2"></input>
-                                            <label for="TriCare">
-                                                TriCare</label>
-                                         </li>
-                                        <li>
-                                        <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="United Beh. Health"
-                                                name="United Beh. Health"
-                                                value="Bike3"></input>
-                                            <label for="United Beh. Health">
-                                                United Beh. Health</label>
-                                        </li>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Primary Physicians Care"
+                                                    name="Primary Physicians Care"
+                                                    value="Bike"></input>
+                                                <label for="Primary Physicians Care">
+                                                    Primary Physicians Care</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="TriCare"
+                                                    name="TriCare"
+                                                    value="Bike2"></input>
+                                                <label for="TriCare">
+                                                    TriCare</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="United Beh. Health"
+                                                    name="United Beh. Health"
+                                                    value="Bike3"></input>
+                                                <label for="United Beh. Health">
+                                                    United Beh. Health</label>
+                                            </li>
 
-                                        <li>
-                                        <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Value Options"
-                                                name="Value Options"
-                                                value="Bike"></input>
-                                            <label for="Value Options">
-                                                Value Options</label>
-                                        </li>
-                                         <li>
-                                         <input onChange={handleInsurance}
-                                                type="checkbox"
-                                                id="Wellpath"
-                                                name="Wellpath"
-                                                value="Bike2"></input>
-                                            <label for="Wellpath">
-                                                Wellpath</label>
-                                         </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Value Options"
+                                                    name="Value Options"
+                                                    value="Bike"></input>
+                                                <label for="Value Options">
+                                                    Value Options</label>
+                                            </li>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="Wellpath"
+                                                    name="Wellpath"
+                                                    value="Bike2"></input>
+                                                <label for="Wellpath">
+                                                    Wellpath</label>
+                                            </li>
                                         </ul>
 
                                     </FormGroup>
                                 </div>
-                                <div id="thing"className=" rowApp">
-                           <div className="asdasd">
-                           <FormGroup>
-                                        <Label className="checkLabel">Treatment Orientation:
-                                        </Label>
-                                        <ul>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Applied Behavior Analysis"
-                                                    name="Applied Behavior Analysis"
-                                                    value="Bike"></input>
-                                                <label for="Applied Behavior Analysis">
-                                                    Applied Behavior Analysis</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="ACT (Acceptance & Commitment)"
-                                                    name="ACT (Acceptance & Commitment)"
-                                                    value="Bike2"></input>
-                                                <label for="ACT (Acceptance & Commitment)">
-                                                    ACT (Acceptance & Commitment)</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Adlerian"
-                                                    name="Adlerian"
-                                                    value="Bike3"></input>
-                                                <label for="Adlerian">
-                                                    Adlerian</label>
-                                            </li>
+                                <div id="thing" className=" rowApp">
+                                    <div className="asdasds">
+                                        <FormGroup>
+                                            <Label className="checkLabel">Treatment Orientation:
+                                            </Label>
+                                            <ul>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Applied Behavior Analysis"
+                                                        name="Applied Behavior Analysis"
+                                                        value="Bike"></input>
+                                                    <label for="Applied Behavior Analysis">
+                                                        Applied Behavior Analysis</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="ACT (Acceptance & Commitment)"
+                                                        name="ACT (Acceptance & Commitment)"
+                                                        value="Bike2"></input>
+                                                    <label for="ACT (Acceptance & Commitment)">
+                                                        ACT (Acceptance & Commitment)</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Adlerian"
+                                                        name="Adlerian"
+                                                        value="Bike3"></input>
+                                                    <label for="Adlerian">
+                                                        Adlerian</label>
+                                                </li>
 
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Behavioral"
-                                                    name="Behavioral"
-                                                    value="Bike"></input>
-                                                <label for="Behavioral">
-                                                    Behavioral</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Cognitive Behavioral Therapy (CBT)"
-                                                    name="Cognitive Behavioral Therapy (CBT)"
-                                                    value="Bike2"></input>
-                                                <label for="Cognitive Behavioral Therapy (CBT)">
-                                                    Cognitive Behavioral Therapy (CBT)</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Dialectical Behavior Therapy (DBT)"
-                                                    name="Dialectical Behavior Therapy (DBT)"
-                                                    value="Bike3"></input>
-                                                <label for="Dialectical Behavior Therapy (DBT)">
-                                                    Dialectical Behavior Therapy (DBT)</label>
-                                            </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Behavioral"
+                                                        name="Behavioral"
+                                                        value="Bike"></input>
+                                                    <label for="Behavioral">
+                                                        Behavioral</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Cognitive Behavioral Therapy (CBT)"
+                                                        name="Cognitive Behavioral Therapy (CBT)"
+                                                        value="Bike2"></input>
+                                                    <label for="Cognitive Behavioral Therapy (CBT)">
+                                                        Cognitive Behavioral Therapy (CBT)</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Dialectical Behavior Therapy (DBT)"
+                                                        name="Dialectical Behavior Therapy (DBT)"
+                                                        value="Bike3"></input>
+                                                    <label for="Dialectical Behavior Therapy (DBT)">
+                                                        Dialectical Behavior Therapy (DBT)</label>
+                                                </li>
 
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Developmental"
-                                                    name="Developmental"
-                                                    value="Bike"></input>
-                                                <label for="Developmental">
-                                                    Developmental</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Eclectic/Integrative"
-                                                    name="Eclectic/Integrative"
-                                                    value="Bike2"></input>
-                                                <label for="Eclectic/Integrative">
-                                                    Eclectic/Integrative</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="EMDR"
-                                                    name="EMDR"
-                                                    value="Bike3"></input>
-                                                <label for="EMDR">
-                                                    EMDR</label>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Developmental"
+                                                        name="Developmental"
+                                                        value="Bike"></input>
+                                                    <label for="Developmental">
+                                                        Developmental</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Eclectic/Integrative"
+                                                        name="Eclectic/Integrative"
+                                                        value="Bike2"></input>
+                                                    <label for="Eclectic/Integrative">
+                                                        Eclectic/Integrative</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="EMDR"
+                                                        name="EMDR"
+                                                        value="Bike3"></input>
+                                                    <label for="EMDR">
+                                                        EMDR</label>
 
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Emotionally Focused Therapy"
-                                                    name="Emotionally Focused Therapy"
-                                                    value="Bike"></input>
-                                                <label for="Emotionally Focused Therapy">
-                                                    Emotionally Focused Therapy</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Existential Humanistic"
-                                                    name="Existential Humanistic"
-                                                    value="Bike2"></input>
-                                                <label for="Existential Humanistic">
-                                                    Existential Humanistic</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Family Systems"
-                                                    name="Family Systems"
-                                                    value="Bike3"></input>
-                                                <label for="Family Systems">
-                                                    Family Systems</label>
-                                            </li>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Emotionally Focused Therapy"
+                                                        name="Emotionally Focused Therapy"
+                                                        value="Bike"></input>
+                                                    <label for="Emotionally Focused Therapy">
+                                                        Emotionally Focused Therapy</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Existential Humanistic"
+                                                        name="Existential Humanistic"
+                                                        value="Bike2"></input>
+                                                    <label for="Existential Humanistic">
+                                                        Existential Humanistic</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Family Systems"
+                                                        name="Family Systems"
+                                                        value="Bike3"></input>
+                                                    <label for="Family Systems">
+                                                        Family Systems</label>
+                                                </li>
 
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Gestalt"
-                                                    name="Gestalt"
-                                                    value="Bike"></input>
-                                                <label for="Gestalt">
-                                                    Gestalt</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Holistic Approach"
-                                                    name="Holistic Approach"
-                                                    value="Bike2"></input>
-                                                <label for="Holistic Approach">
-                                                    Holistic Approach</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Hypnotherapy"
-                                                    name="Hypnotherapy"
-                                                    value="Bike3"></input>
-                                                <label for="Hypnotherapy">
-                                                    Hypnotherapy</label>
-                                            </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Gestalt"
+                                                        name="Gestalt"
+                                                        value="Bike"></input>
+                                                    <label for="Gestalt">
+                                                        Gestalt</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Holistic Approach"
+                                                        name="Holistic Approach"
+                                                        value="Bike2"></input>
+                                                    <label for="Holistic Approach">
+                                                        Holistic Approach</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Hypnotherapy"
+                                                        name="Hypnotherapy"
+                                                        value="Bike3"></input>
+                                                    <label for="Hypnotherapy">
+                                                        Hypnotherapy</label>
+                                                </li>
 
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Imago"
-                                                    name="Imago"
-                                                    value="Bike"></input>
-                                                <label for="Imago">
-                                                    Imago</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Interpersonal"
-                                                    name="Interpersonal"
-                                                    value="Bike2"></input>
-                                                <label for="Interpersonal">
-                                                    Interpersonal</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Mindfulness Based Therapy"
-                                                    name="Mindfulness Based Therapy"
-                                                    value="Bike3"></input>
-                                                <label for="Mindfulness Based Therapy">
-                                                    Mindfulness Based Therapy</label>
-                                            </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Imago"
+                                                        name="Imago"
+                                                        value="Bike"></input>
+                                                    <label for="Imago">
+                                                        Imago</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Interpersonal"
+                                                        name="Interpersonal"
+                                                        value="Bike2"></input>
+                                                    <label for="Interpersonal">
+                                                        Interpersonal</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Mindfulness Based Therapy"
+                                                        name="Mindfulness Based Therapy"
+                                                        value="Bike3"></input>
+                                                    <label for="Mindfulness Based Therapy">
+                                                        Mindfulness Based Therapy</label>
+                                                </li>
 
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Motivational Interviewing"
-                                                    name="Motivational Interviewing"
-                                                    value="Bike"></input>
-                                                <label for="Motivational Interviewing">
-                                                    Motivational Interviewing</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Narrative Therapy"
-                                                    name="Narrative Therapy"
-                                                    value="Bike2"></input>
-                                                <label for="Narrative Therapy">
-                                                    Narrative Therapy</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Play Therapy"
-                                                    name="Play Therapy"
-                                                    value="Bike3"></input>
-                                                <label for="Play Therapy">
-                                                    Play Therapy</label>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Motivational Interviewing"
+                                                        name="Motivational Interviewing"
+                                                        value="Bike"></input>
+                                                    <label for="Motivational Interviewing">
+                                                        Motivational Interviewing</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Narrative Therapy"
+                                                        name="Narrative Therapy"
+                                                        value="Bike2"></input>
+                                                    <label for="Narrative Therapy">
+                                                        Narrative Therapy</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Play Therapy"
+                                                        name="Play Therapy"
+                                                        value="Bike3"></input>
+                                                    <label for="Play Therapy">
+                                                        Play Therapy</label>
 
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Psychoanalytic"
-                                                    name="Psychoanalytic"
-                                                    value="Bike"></input>
-                                                <label for="Psychoanalytic">
-                                                    Psychoanalytic</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Psychodynamic"
-                                                    name="Psychodynamic"
-                                                    value="Bike2"></input>
-                                                <label for="Psychodynamic">
-                                                    Psychodynamic</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Rational-Emotive"
-                                                    name="Rational-Emotive"
-                                                    value="Bike3"></input>
-                                                <label for="Rational-Emotive">
-                                                    Rational-Emotive</label>
-                                            </li>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Psychoanalytic"
+                                                        name="Psychoanalytic"
+                                                        value="Bike"></input>
+                                                    <label for="Psychoanalytic">
+                                                        Psychoanalytic</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Psychodynamic"
+                                                        name="Psychodynamic"
+                                                        value="Bike2"></input>
+                                                    <label for="Psychodynamic">
+                                                        Psychodynamic</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Rational-Emotive"
+                                                        name="Rational-Emotive"
+                                                        value="Bike3"></input>
+                                                    <label for="Rational-Emotive">
+                                                        Rational-Emotive</label>
+                                                </li>
 
-                                            <li>
-                                                <input onChange={treatmentOrientation}
-                                                    type="checkbox"
-                                                    id="Solution Focused/Solution Oriented"
-                                                    name="Solution Focused/Solution Oriented"
-                                                    value="Bike3"></input>
-                                                <label for="Solution Focused/Solution Oriented">
-                                                    Solution Focused/Solution Oriented</label>
-                                            </li>
-                                        </ul>
-                                    </FormGroup>
+                                                <li>
+                                                    <input onChange={treatmentOrientation}
+                                                        type="checkbox"
+                                                        id="Solution Focused/Solution Oriented"
+                                                        name="Solution Focused/Solution Oriented"
+                                                        value="Bike3"></input>
+                                                    <label for="Solution Focused/Solution Oriented">
+                                                        Solution Focused/Solution Oriented</label>
+                                                </li>
+                                            </ul>
+                                        </FormGroup>
 
-                                    <FormGroup className="sss">
-                                <Label className="checkLabel">Assement Evaluations:
-                                </Label>
-                                <ul>
-                               <li>
-                               <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Cognitive/IQ"
-                                    name="Cognitive/IQ"
-                                    value="Bike"></input>
-                                <label for="Cognitive/IQ">
-                                    Cognitive/IQ</label>
-                               </li>
-                              <li>
-                              <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Educational/Achievement Testing"
-                                    name="Educational/Achievement Testing"
-                                    value="Bike2"></input>
-                                <label for="Educational/Achievement Testing">
-                                    Educational/Achievement Testing</label>
-                              </li>
-                                <li><input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Academically Gifted"
-                                    name="Academically Gifted"
-                                    value="Bike3"></input>
-                                <label for="Academically Gifted">
-                                    Academically Gifted</label></li>
+                                        <FormGroup className="sss">
+                                            <Label className="checkLabel">Assement Evaluations:
+                                            </Label>
+                                            <ul>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Cognitive/IQ"
+                                                        name="Cognitive/IQ"
+                                                        value="Bike"></input>
+                                                    <label for="Cognitive/IQ">
+                                                        Cognitive/IQ</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Educational/Achievement Testing"
+                                                        name="Educational/Achievement Testing"
+                                                        value="Bike2"></input>
+                                                    <label for="Educational/Achievement Testing">
+                                                        Educational/Achievement Testing</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Academically Gifted"
+                                                        name="Academically Gifted"
+                                                        value="Bike3"></input>
+                                                    <label for="Academically Gifted">
+                                                        Academically Gifted</label>
+                                                </li>
 
-<li>
-    
-<input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Early Admission to Kindergarten"
-                                    name="Early Admission to Kindergarten"
-                                    value="Bike"></input>
-                                <label for="Early Admission to Kindergarten">
-                                    Early Admission to Kindergarten</label>
-</li>
-                              <li>
-                              <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Developmental Disabilities"
-                                    name="Developmental Disabilities"
-                                    value="Bike2"></input>
-                                <label for="Developmental Disabilities">
-                                    Developmental Disabilities</label>
-                              </li>
-                             <li>
-                             <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Learning Disability"
-                                    name="Learning Disability"
-                                    value="Bike3"></input>
-                                <label for="Learning Disability">
-                                    Learning Disability</label>
+                                                <li>
 
-                             </li>
-                              <li>
-                              <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Aspergers/Autism"
-                                    name="Aspergers/Autism"
-                                    value="Bike"></input>
-                                <label for="Aspergers/Autism">
-                                    Aspergers/Autism</label>
-                              </li>
-                               <li>
-                               <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Auditory Processing Problems"
-                                    name="Auditory Processing Problems"
-                                    value="Bike2"></input>
-                                <label for="Auditory Processing Problems">
-                                    Auditory Processing Problems</label>
-                               </li>
-                              <li>   <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="ADHD-Adult"
-                                    name="ADHD-Adult"
-                                    value="ADHD-Adult"></input>
-                                <label for="ADHD-Adult">
-                                    ADHD-Adult</label></li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Early Admission to Kindergarten"
+                                                        name="Early Admission to Kindergarten"
+                                                        value="Bike"></input>
+                                                    <label for="Early Admission to Kindergarten">
+                                                        Early Admission to Kindergarten</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Developmental Disabilities"
+                                                        name="Developmental Disabilities"
+                                                        value="Bike2"></input>
+                                                    <label for="Developmental Disabilities">
+                                                        Developmental Disabilities</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Learning Disability"
+                                                        name="Learning Disability"
+                                                        value="Bike3"></input>
+                                                    <label for="Learning Disability">
+                                                        Learning Disability</label>
 
-                               <li>
-                               <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="ADHD-Child/Adolescent"
-                                    name="ADHD-Child/Adolescent"
-                                    value="ADHD-Child/Adolescent"></input>
-                                <label for="ADHD-Child/Adolescent">
-                                    ADHD-Child/Adolescent</label>
-                               </li>
-                             <li>
-                             <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Neuropsychological"
-                                    name="Neuropsychological"
-                                    value="Bike2"></input>
-                                <label for="Neuropsychological">
-                                    Insurance 2</label>
-                             </li>
-                              <li>
-                              <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Diagnostic/Personality Assessment"
-                                    name="Diagnostic/Personality Assessment"
-                                    value="Bike3"></input>
-                                <label for="Diagnostic/Personality Assessment">
-                                    Diagnostic/Personality Assessment</label>
-                              </li>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Aspergers/Autism"
+                                                        name="Aspergers/Autism"
+                                                        value="Bike"></input>
+                                                    <label for="Aspergers/Autism">
+                                                        Aspergers/Autism</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Auditory Processing Problems"
+                                                        name="Auditory Processing Problems"
+                                                        value="Bike2"></input>
+                                                    <label for="Auditory Processing Problems">
+                                                        Auditory Processing Problems</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="ADHD-Adult"
+                                                        name="ADHD-Adult"
+                                                        value="ADHD-Adult"></input>
+                                                    <label for="ADHD-Adult">
+                                                        ADHD-Adult</label>
+                                                </li>
 
-                            <li>
-                            <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Psychosocial/Adaptive Behavior"
-                                    name="Psychosocial/Adaptive Behavior"
-                                    value="Bike"></input>
-                                <label for="Psychosocial/Adaptive Behavior">
-                                    Psychosocial/Adaptive Behavior</label>
-                            </li>
-                             <li>
-                             <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Behavioral Assessments"
-                                    name="Behavioral Assessments"
-                                    value="Bike2"></input>
-                                <label for="Behavioral Assessments">
-                                    Behavioral Assessments</label>
-                             </li>
-                               <li> <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Adoption"
-                                    name="Adoption"
-                                    value="Bike3"></input>
-                                <label for="Adoption">
-                                    Adoption</label></li>
-                               
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="ADHD-Child/Adolescent"
+                                                        name="ADHD-Child/Adolescent"
+                                                        value="ADHD-Child/Adolescent"></input>
+                                                    <label for="ADHD-Child/Adolescent">
+                                                        ADHD-Child/Adolescent</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Neuropsychological"
+                                                        name="Neuropsychological"
+                                                        value="Bike2"></input>
+                                                    <label for="Neuropsychological">
+                                                        Insurance 2</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Diagnostic/Personality Assessment"
+                                                        name="Diagnostic/Personality Assessment"
+                                                        value="Bike3"></input>
+                                                    <label for="Diagnostic/Personality Assessment">
+                                                        Diagnostic/Personality Assessment</label>
+                                                </li>
 
-                            <li>    <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Custody Evaluations"
-                                    name="Custody Evaluations"
-                                    value="Bike"></input>
-                                <label for="Custody Evaluations">
-                                    Custody EvaluationsCustody Evaluations</label></li>
-                                <li>
-                                <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Infertility Consultation"
-                                    name="Infertility Consultation"
-                                    value="Bike2"></input>
-                                <label for="Infertility Consultation">
-                                    Infertility Consultation</label>
-                                </li>
-                               <li>
-                               <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Pre-Marital Assessment"
-                                    name="Pre-Marital Assessment"
-                                    value="Bike3"></input>
-                                <label for="Pre-Marital Assessment">
-                                    Pre-Marital Assessment</label>
-                               </li>
-
-                              <li>
-                              <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Bariatric Surgery Preoperative Eval"
-                                    name="Bariatric Surgery Preoperative Eval"
-                                    value="Bariatric Surgery Preoperative Eval"></input>
-                                <label for="Bariatric Surgery Preoperative Eval">
-                                    Bariatric Surgery Preoperative Eval</label>
-                              </li>
-                             <li>
-                             <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Egg Donorship"
-                                    name="Egg Donorship"
-                                    value="Bike2"></input>
-                                <label for="Egg Donorship">
-                                    Egg Donorship</label>
-                             </li>
-                             <li>
-                             <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Intrathecal Pump"
-                                    name="Intrathecal Pump"
-                                    value="Bike3"></input>
-                                <label for="Intrathecal Pump">
-                                    Intrathecal Pump</label>
-
-                             </li>
-                             <li>
-                             <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Pre-Transplant Evaluation"
-                                    name="Pre-Transplant Evaluation"
-                                    value="Bike"></input>
-                                <label for="Pre-Transplant Evaluation">
-                                    Pre-Transplant Evaluation</label>
-                             </li>
-                               <li>
-                               <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Spinal Cord Stimulator"
-                                    name="Spinal Cord Stimulator"
-                                    value="Bike2"></input>
-                                <label for="Spinal Cord Stimulator">
-                                    Spinal Cord Stimulator</label>
-                               </li>
-                             <li>
-                             <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Sex Reassignment"
-                                    name="Sex Reassignment"
-                                    value="Bike3"></input>
-                                <label for="Sex Reassignment">
-                                    Sex Reassignment</label>
-                             </li>
-
-                            <li>
-                            <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Chronic Pain"
-                                    name="Chronic Pain"
-                                    value="Bike"></input>
-                                <label for="Chronic Pain">
-                                    Chronic Pain</label>
-                            </li>
-                             <li>
-                             <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Career Testing"
-                                    name="Career Testing"
-                                    value="Bike2"></input>
-                                <label for="Career Testing">
-                                    Career Testing</label>
-                             </li>
-                            <li>    <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Fitness for Duty"
-                                    name="Fitness for Duty"
-                                    value="Fitness for Duty"></input>
-                                <label for="test3">
-                                    Fitness for Duty</label></li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Psychosocial/Adaptive Behavior"
+                                                        name="Psychosocial/Adaptive Behavior"
+                                                        value="Bike"></input>
+                                                    <label for="Psychosocial/Adaptive Behavior">
+                                                        Psychosocial/Adaptive Behavior</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Behavioral Assessments"
+                                                        name="Behavioral Assessments"
+                                                        value="Bike2"></input>
+                                                    <label for="Behavioral Assessments">
+                                                        Behavioral Assessments</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Adoption"
+                                                        name="Adoption"
+                                                        value="Bike3"></input>
+                                                    <label for="Adoption">
+                                                        Adoption</label>
+                                                </li>
 
 
-                            <li>
-                            <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Selection/Hiring"
-                                    name="Selection/Hiring"
-                                    value="Bike"></input>
-                                <label for="Selection/Hiring">
-                                    Selection/Hiring</label>
-                            </li>
-                              <li>
-                              <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Disability Evaluations"
-                                    name="Disability Evaluations"
-                                    value="Bike2"></input>
-                                <label for="Disability Evaluations">
-                                    Disability Evaluations</label>
-                              </li>
-                            <li>
-                            <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Competency/Guardianship"
-                                    name="Competency/Guardianship"
-                                    value="Bike3"></input>
-                                <label for="Competency/Guardianship">
-                                    Competency/Guardianship</label>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Custody Evaluations"
+                                                        name="Custody Evaluations"
+                                                        value="Bike"></input>
+                                                    <label for="Custody Evaluations">
+                                                        Custody EvaluationsCustody Evaluations</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Infertility Consultation"
+                                                        name="Infertility Consultation"
+                                                        value="Bike2"></input>
+                                                    <label for="Infertility Consultation">
+                                                        Infertility Consultation</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Pre-Marital Assessment"
+                                                        name="Pre-Marital Assessment"
+                                                        value="Bike3"></input>
+                                                    <label for="Pre-Marital Assessment">
+                                                        Pre-Marital Assessment</label>
+                                                </li>
 
-                            </li>
-                             <li>
-                             <input onChange={handleAssessments}
-                                    type="checkbox"
-                                    id="Forensic"
-                                    name="Forensic"
-                                    value="Bike3"></input>
-                                <label for="Forensic">
-                                    Forensic</label>
-                             </li>
-                                </ul>
-                            </FormGroup>
-                           </div>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Bariatric Surgery Preoperative Eval"
+                                                        name="Bariatric Surgery Preoperative Eval"
+                                                        value="Bariatric Surgery Preoperative Eval"></input>
+                                                    <label for="Bariatric Surgery Preoperative Eval">
+                                                        Bariatric Surgery Preoperative Eval</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Egg Donorship"
+                                                        name="Egg Donorship"
+                                                        value="Bike2"></input>
+                                                    <label for="Egg Donorship">
+                                                        Egg Donorship</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Intrathecal Pump"
+                                                        name="Intrathecal Pump"
+                                                        value="Bike3"></input>
+                                                    <label for="Intrathecal Pump">
+                                                        Intrathecal Pump</label>
+
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Pre-Transplant Evaluation"
+                                                        name="Pre-Transplant Evaluation"
+                                                        value="Bike"></input>
+                                                    <label for="Pre-Transplant Evaluation">
+                                                        Pre-Transplant Evaluation</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Spinal Cord Stimulator"
+                                                        name="Spinal Cord Stimulator"
+                                                        value="Bike2"></input>
+                                                    <label for="Spinal Cord Stimulator">
+                                                        Spinal Cord Stimulator</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Sex Reassignment"
+                                                        name="Sex Reassignment"
+                                                        value="Bike3"></input>
+                                                    <label for="Sex Reassignment">
+                                                        Sex Reassignment</label>
+                                                </li>
+
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Chronic Pain"
+                                                        name="Chronic Pain"
+                                                        value="Bike"></input>
+                                                    <label for="Chronic Pain">
+                                                        Chronic Pain</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Career Testing"
+                                                        name="Career Testing"
+                                                        value="Bike2"></input>
+                                                    <label for="Career Testing">
+                                                        Career Testing</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Fitness for Duty"
+                                                        name="Fitness for Duty"
+                                                        value="Fitness for Duty"></input>
+                                                    <label for="test3">
+                                                        Fitness for Duty</label>
+                                                </li>
+
+
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Selection/Hiring"
+                                                        name="Selection/Hiring"
+                                                        value="Bike"></input>
+                                                    <label for="Selection/Hiring">
+                                                        Selection/Hiring</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Disability Evaluations"
+                                                        name="Disability Evaluations"
+                                                        value="Bike2"></input>
+                                                    <label for="Disability Evaluations">
+                                                        Disability Evaluations</label>
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Competency/Guardianship"
+                                                        name="Competency/Guardianship"
+                                                        value="Bike3"></input>
+                                                    <label for="Competency/Guardianship">
+                                                        Competency/Guardianship</label>
+
+                                                </li>
+                                                <li>
+                                                    <input onChange={handleAssessments}
+                                                        type="checkbox"
+                                                        id="Forensic"
+                                                        name="Forensic"
+                                                        value="Bike3"></input>
+                                                    <label for="Forensic">
+                                                        Forensic</label>
+                                                </li>
+                                            </ul>
+                                        </FormGroup>
+                                    </div>
                                 </div>
                             </div>
 
 
-                           
                             <FormGroup>
                                 <Label className="checkLabel">Treatment Mode:
                                 </Label>

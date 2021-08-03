@@ -36,7 +36,7 @@ const App = () => {
     if (input.length > 0) {
         state = state.filter((i) => {
             if (i.insuranceAccepted !== null && i.specialties !== null) {
-                return(i.name.toLowerCase().match(input.toLowerCase()) || i.zip.toLowerCase().match(input.toLowerCase()) || i.specialties.toLowerCase().match(input.toLowerCase()) || i.insuranceAccepted.toLowerCase().match(input.toLowerCase()))
+                return(i.name.toLowerCase().match(input.toLowerCase()) || i.zip.toLowerCase().match(input.toLowerCase()) || i.specialties.toLowerCase().match(input.toLowerCase()) || i.insuranceAccepted.toLowerCase().match(input.toLowerCase() || i.address.toLowerCase().match(input.toLowerCase())))
             } else {
                 return("")
             }
@@ -65,17 +65,7 @@ const App = () => {
             <div className="card-section offset">
                 <Container>
                     <div className="card-center">
-                        <div id="searchbar">
-                            <input type="text"
-                                onChange={handleChange}
-                                value={input}
-                                name="query"
-                                maxlength="21"
-                                placeholder="Search..."
-                                class="searchbar"/>
-                            <img src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png" alt="Magnifying Glass" class="button"/>
-
-                        </div>
+                        
 
                         <div className="asdasd">
                             <p className="search-info twotime">
@@ -119,7 +109,17 @@ const App = () => {
                                                                                                 				assumes no liability in the event you are not satisfied or helped
                                                                                                 				by a psychologist you choose to meet with from this list.
                             </p>
+                            <div id="searchbar">
+                            <input type="text"
+                                onChange={handleChange}
+                                value={input}
+                                name="query"
+                                maxlength="21"
+                                placeholder="Search..."
+                                class="searchbar"/>
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png" alt="Magnifying Glass" class="button"/>
 
+                        </div>
                             <label>Insurance: </label>
                             <select id="insurance" onChange={handleChange}>
                                 <option value=""></option>
@@ -206,6 +206,17 @@ const App = () => {
                                 <option value="Women's Issues">Women's Issues</option>
                                 <option value="Work - Life Balance Issues">Work - Life Balance Issues</option>
                             </select>
+
+                            <label>Name: </label>
+                            <select onChange={handleChange}>
+                                {state.map((psych, index) => {
+                                    return(
+                                        <option value={psych.name} key={index}>
+                                            {psych.name}
+                                        </option>
+                                    )
+                                })}
+                            </select>
                         </div>
 
                     </div>
@@ -249,6 +260,12 @@ const App = () => {
                                                 Location:{" "}
                                                 {
                                                 psych.city + " " + psych.state + " " + psych.zip
+                                            } </h6>
+
+<h6>
+                                                Address:{" "}
+                                                {
+                                                psych.address
                                             } </h6>
                                         </div>
                                         <div className="second-col">

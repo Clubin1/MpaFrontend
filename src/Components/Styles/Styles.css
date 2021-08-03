@@ -903,7 +903,7 @@ a{
   margin-left: .2rem;
 }
 
-.rowApp, #thing{
+.rowApp{
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -911,13 +911,13 @@ a{
   justify-content: space-between;
 }
 
-.asdasd{
+.asdasds{
   width: 40rem;
 }
-.asdasd li{
+.asdasds li{
   list-style-type: none;
 }
-.asdasd li label{
+.asdasds li label{
   margin-left: .2rem;
 }
 
@@ -925,7 +925,7 @@ a{
   margin-top: 1rem;
 
 }
-.asdasd{
+.asdasds{
   margin-top: 0rem;
 }
 
