@@ -891,3 +891,41 @@ a{
   font-weight: 600;
   text-align: center;
 }
+.checkLabel{
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.formWidth li{
+  list-style-type: none; 
+}
+.formWidth li label{
+  margin-left: .2rem;
+}
+
+.rowApp, #thing{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.asdasd{
+  width: 40rem;
+}
+.asdasd li{
+  list-style-type: none;
+}
+.asdasd li label{
+  margin-left: .2rem;
+}
+
+.formWidth{
+  margin-top: 1rem;
+
+}
+.asdasd{
+  margin-top: 0rem;
+}
+
