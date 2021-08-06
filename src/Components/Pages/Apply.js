@@ -209,7 +209,7 @@ function Apply() {
                         <form onSubmit={submitApplication}
                             class="form">
                             <FormGroup>
-                                <Label>Full Name</Label>
+                                <Label>Full Name *including title</Label>
                                 <Input required="required" name="name" placeholder="Full Name"
                                     onChange={onChange}/>
                                 
