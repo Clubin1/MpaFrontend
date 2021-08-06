@@ -24,7 +24,14 @@ function Apply() {
         treatmentModality: "",
         assessmentEvaluations: "",
         populationsServed: "",
-        languages: ""
+        languages: "",
+
+        imgurl:"",
+        ps_url:"",
+
+        fileInput: "",
+        selectedFile:"",
+        imageURL: ""
     });
 
     function onChange(e) { // set the key = to the name property equal to the value typed
@@ -110,6 +117,7 @@ function Apply() {
         console.log(data)
     }
     async function submitApplication(event) {
+        event.preventDefault()
         alert(data.name + ", thank you for your appliaction. We will get back to you shortly. Please submit your payment if required.");
         const response = await fetch("https://blooming-forest-09372.herokuapp.com/psychologists", {
             method: "POST",
@@ -137,7 +145,9 @@ function Apply() {
                     treatmentModality: data.treatmentModality,
                     assessmentEvaluations: data.assessmentEvaluations,
                     populationsServed: data.populationsServed,
-                    languages: data.languages
+                    languages: data.languages,
+                    imgurl: data.imgurl,
+                    ps_url: data.ps_url
                 }
             )
         });
@@ -147,6 +157,31 @@ function Apply() {
             console.log(error)
         }
     }
+        const previewFile = (file) => {
+            const reader = new FileReader()
+            reader.readAsDataURL(file)
+            reader.onloadend = () => {
+                setData({
+                    ...data, 
+                    imgurl : reader.result
+                })
+            }
+        }
+
+        const handleFileInputChange = (e) => {
+            const file = e.target.files[0]
+            previewFile(file);
+            setData({
+                ...data, 
+                selectedFile : file
+            })
+            setData({
+                ...data, 
+                selectedFile : e.target.value
+            })
+
+        }
+
 
     return (
         <div>
@@ -173,9 +208,9 @@ function Apply() {
                                 <Label>Full Name</Label>
                                 <Input required="required" name="name" placeholder="Full Name"
                                     onChange={onChange}/>
-                                `
+                                
                             </FormGroup>
-                            <FormGroup>`
+                            <FormGroup>
                                 <Label>Last Name</Label>
                                 <Input required="required" name="lastName" placeholder="Last Name"
                                     onChange={onChange}/>
@@ -1642,6 +1677,9 @@ function Apply() {
                             </FormGroup>
                             <div className="uploadForm">
                                 <h3>Upload Photo</h3>
+                                <input type="file" id="files" name="image" onChange={handleFileInputChange} value={data.fileInput} className="form-input">
+</input>
+
                             </div>
 
                             <div className="order-button-wrapper">
