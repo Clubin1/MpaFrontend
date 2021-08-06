@@ -24,11 +24,7 @@ function Apply() {
         treatmentModality: "",
         assessmentEvaluations: "",
         populationsServed: "",
-        languages: "",
-        fileInput: "",
-        selectedFile:"",
-        previewSource:"",
-        imageURL: ""
+        languages: ""
     });
 
     function onChange(e) { // set the key = to the name property equal to the value typed
@@ -113,11 +109,7 @@ function Apply() {
         })
         console.log(data)
     }
-
-
-
     async function submitApplication(event) {
-        event.prevantDefault()
         alert(data.name + ", thank you for your appliaction. We will get back to you shortly. Please submit your payment if required.");
         const response = await fetch("https://blooming-forest-09372.herokuapp.com/psychologists", {
             method: "POST",
@@ -145,39 +137,17 @@ function Apply() {
                     treatmentModality: data.treatmentModality,
                     assessmentEvaluations: data.assessmentEvaluations,
                     populationsServed: data.populationsServed,
-                    languages: data.languages,
-                    previewSource: data.previewSource
+                    languages: data.languages
                 }
             )
         });
 
-        if (!response.ok) {
+        if (! response.ok) {
+            setError(response.statusText);
             console.log(error)
         }
-        if(!data.previewSource) return
-        console.log(data.previewSource,'as;lkdjasl;kdjas;kld;aiskldj;aksld')
-    }
-    const handleFileInputChange = (e) => {
-        const file = e.target.files[0]
-        previewFile(file);
-        setData({
-            ...data,
-            selectedFile: file
-        })
-        setData({
-            ...data,
-            selectedFile: e.target.value
-        })
     }
 
-    const previewFile = (file) => {
-        const reader = new FileReader()
-        reader.readAsDataURL(file)
-        reader.onloadend = () => {
-            const data = reader.result
-            setData({previewSource : data})
-        }
-    }
     return (
         <div>
             <div className="card-section offset">
@@ -995,365 +965,7 @@ function Apply() {
                                                 <label for="None">
                                                     None</label>
                                             </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Accepts Out Of Network Benefits"
-                                                    name="Accepts Out Of Network Benefits"
-                                                    value="Bike2"></input>
-                                                <label for="Accepts Out Of Network Benefits">
-                                                    Accepts Out Of Network Benefits</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Aetna"
-                                                    name="Aetna"
-                                                    value="Bike3"></input>
-                                                <label for="Aetna">
-                                                    Aetna</label>
-                                            </li>
-
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="BC/BS"
-                                                    name="BC/BS"
-                                                    value="Bike"></input>
-                                                <label for="BC/BS">
-                                                    BC/BS</label>
-                                            </li>
-                                            <li>
-
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="BC/BS Blue Value"
-                                                    name="BC/BS Blue Value"
-                                                    value="Bike2"></input>
-                                                <label for="BC/BS Blue Value">
-                                                    BC/BS Blue Value</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="BC/BS State Employee Plan"
-                                                    name="BC/BS State Employee Plan"
-                                                    value="Bike3"></input>
-                                                <label for="BC/BS State Employee Plan">
-                                                    BC/BS State Employee Plan</label>
-
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="BC/BS Federal Plan"
-                                                    name="BC/BS Federal Plan"
-                                                    value="Bike"></input>
-                                                <label for="BC/BS Federal Plan">
-                                                    BC/BS Federal Plan</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="CBHA"
-                                                    name="CBHA"
-                                                    value="Bike2"></input>
-                                                <label for="CBHA">
-                                                    CBHA</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Cigna"
-                                                    name="Cigna"
-                                                    value="Bike3"></input>
-                                                <label for="Cigna">
-                                                    Cigna</label>
-                                            </li>
-
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Medcost"
-                                                    name="Medcost"
-                                                    value="Bike"></input>
-                                                <label for="Medcost">
-                                                    Medcost</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Medicare"
-                                                    name="Medicare"
-                                                    value="Bike2"></input>
-                                                <label for="Medicare">
-                                                    Medicare</label>
-                                            </li>
-
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Medicaid"
-                                                    name="Medicaid"
-                                                    value="Bike3"></input>
-                                                <label for="Medicaid">
-                                                    Medicaid</label>
-                                            </li>
-
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Magellan"
-                                                    name="Magellan"
-                                                    value="Bike"></input>
-                                                <label for="Magellan">
-                                                    Magellan</label>
-                                            </li>
-
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="MHN"
-                                                    name="MHN"
-                                                    value="Bike2"></input>
-                                                <label for="MHN">
-                                                    MHN</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="NC Health Choice"
-                                                    name="NC Health Choice"
-                                                    value="Bike3"></input>
-                                                <label for="NC Health Choice">
-                                                    NC Health Choice</label>
-                                            </li>
-
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Primary Physicians Care"
-                                                    name="Primary Physicians Care"
-                                                    value="Bike"></input>
-                                                <label for="Primary Physicians Care">
-                                                    Primary Physicians Care</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="TriCare"
-                                                    name="TriCare"
-                                                    value="Bike2"></input>
-                                                <label for="TriCare">
-                                                    TriCare</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="United Beh. Health"
-                                                    name="United Beh. Health"
-                                                    value="Bike3"></input>
-                                                <label for="United Beh. Health">
-                                                    United Beh. Health</label>
-                                            </li>
-
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Value Options"
-                                                    name="Value Options"
-                                                    value="Bike"></input>
-                                                <label for="Value Options">
-                                                    Value Options</label>
-                                            </li>
-
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Wellpath"
-                                                    name="Wellpath"
-                                                    value="Bike2"></input>
-                                                <label for="Wellpath">
-                                                    Wellpath</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Accepts Out Of Network Benefits"
-                                                    name="Accepts Out Of Network Benefits"
-                                                    value="Bike2"></input>
-                                                <label for="Accepts Out Of Network Benefits">
-                                                    Accepts Out Of Network Benefits</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Aetna"
-                                                    name="Aetna"
-                                                    value="Bike3"></input>
-                                                <label for="Aetna">
-                                                    Aetna</label>
-                                            </li>
-
-
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="BC/BS"
-                                                    name="BC/BS"
-                                                    value="Bike"></input>
-                                                <label for="BC/BS">
-                                                    BC/BS</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="BC/BS Blue Value"
-                                                    name="BC/BS Blue Value"
-                                                    value="Bike2"></input>
-                                                <label for="BC/BS Blue Value">
-                                                    BC/BS Blue Value</label>
-                                            </li>
-
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="BC/BS State Employee Plan"
-                                                    name="BC/BS State Employee Plan"
-                                                    value="Bike3"></input>
-                                                <label for="BC/BS State Employee Plan">
-                                                    BC/BS State Employee Plan</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="BC/BS Federal Plan"
-                                                    name="BC/BS Federal Plan"
-                                                    value="Bike"></input>
-                                                <label for="BC/BS Federal Plan">
-                                                    BC/BS Federal Plan</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="CBHA"
-                                                    name="CBHA"
-                                                    value="Bike2"></input>
-                                                <label for="CBHA">
-                                                    CBHA</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Cigna"
-                                                    name="Cigna"
-                                                    value="Bike3"></input>
-                                                <label for="Cigna">
-                                                    Cigna</label>
-
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Medcost"
-                                                    name="Medcost"
-                                                    value="Bike"></input>
-                                                <label for="Medcost">
-                                                    Medcost</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Medicare"
-                                                    name="Medicare"
-                                                    value="Bike2"></input>
-                                                <label for="Medicare">
-                                                    Medicare</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Medicaid"
-                                                    name="Medicaid"
-                                                    value="Bike3"></input>
-                                                <label for="Medicaid">
-                                                    Medicaid</label>
-
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Magellan"
-                                                    name="Magellan"
-                                                    value="Bike"></input>
-                                                <label for="Magellan">
-                                                    Magellan</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="MHN"
-                                                    name="MHN"
-                                                    value="Bike2"></input>
-                                                <label for="MHN">
-                                                    MHN</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="NC Health Choice"
-                                                    name="NC Health Choice"
-                                                    value="Bike3"></input>
-                                                <label for="NC Health Choice">
-                                                    NC Health Choice</label>
-
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Primary Physicians Care"
-                                                    name="Primary Physicians Care"
-                                                    value="Bike"></input>
-                                                <label for="Primary Physicians Care">
-                                                    Primary Physicians Care</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="TriCare"
-                                                    name="TriCare"
-                                                    value="Bike2"></input>
-                                                <label for="TriCare">
-                                                    TriCare</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="United Beh. Health"
-                                                    name="United Beh. Health"
-                                                    value="Bike3"></input>
-                                                <label for="United Beh. Health">
-                                                    United Beh. Health</label>
-                                            </li>
-
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Value Options"
-                                                    name="Value Options"
-                                                    value="Bike"></input>
-                                                <label for="Value Options">
-                                                    Value Options</label>
-                                            </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="Wellpath"
-                                                    name="Wellpath"
-                                                    value="Bike2"></input>
-                                                <label for="Wellpath">
-                                                    Wellpath</label>
-                                            </li>
+                                           
                                         </ul>
 
                                     </FormGroup>
@@ -2030,7 +1642,6 @@ function Apply() {
                             </FormGroup>
                             <div className="uploadForm">
                                 <h3>Upload Photo</h3>
-                                <input type="file" onChange={handleFileInputChange} value={data.fileInput} name="image" className="form-input"></input>
                             </div>
 
                             <div className="order-button-wrapper">
