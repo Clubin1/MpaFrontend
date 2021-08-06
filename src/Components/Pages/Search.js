@@ -270,11 +270,7 @@ const App = () => {
                                         </div>
                                         <div className="second-col">
                                             <img alt="Member" className="image"
-                                                src={
-                                                    `/images/${
-                                                        psych.imgurl
-                                                    }`
-                                                }/>
+                                                src={psych.ps_url}/>
                                         </div>
                                     </div>
                                 </div>

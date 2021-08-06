@@ -116,9 +116,36 @@ function Apply() {
         })
         console.log(data)
     }
+
+    let handleImageUpload = () => {
+        const { files } = document.querySelector('input[type="file"]')
+        console.log(files[0])
+        const formData = new FormData();
+        formData.append('file', files[0]);
+        // replace this with your upload preset name
+        formData.append('upload_preset', 'dev_setups');
+        const options = {
+          method: 'POST',
+          body: formData,
+        };
+        
+        // replace cloudname with your Cloudinary cloud_name
+        return fetch('https://api.cloudinary.com/v1_1/dm5uxyi2s/image/upload', options)
+          .then(res => res.json())
+          .then(res => {
+              setData({
+                  ...data,
+                  ps_url: res.secure_url
+              })
+              console.log(res)
+            })
+          .catch(err => console.log(err));
+      }
+
     async function submitApplication(event) {
-        event.preventDefault()
         alert(data.name + ", thank you for your appliaction. We will get back to you shortly. Please submit your payment if required.");
+        // https://api.cloudinary.com/v1_1/dm5uxyi2s
+       
         const response = await fetch("https://blooming-forest-09372.herokuapp.com/psychologists", {
             method: "POST",
             headers: {
@@ -157,30 +184,7 @@ function Apply() {
             console.log(error)
         }
     }
-        const previewFile = (file) => {
-            const reader = new FileReader()
-            reader.readAsDataURL(file)
-            reader.onloadend = () => {
-                setData({
-                    ...data, 
-                    imgurl : reader.result
-                })
-            }
-        }
 
-        const handleFileInputChange = (e) => {
-            const file = e.target.files[0]
-            previewFile(file);
-            setData({
-                ...data, 
-                selectedFile : file
-            })
-            setData({
-                ...data, 
-                selectedFile : e.target.value
-            })
-
-        }
 
 
     return (
@@ -1677,7 +1681,7 @@ function Apply() {
                             </FormGroup>
                             <div className="uploadForm">
                                 <h3>Upload Photo</h3>
-                                <input type="file" id="files" name="image" onChange={handleFileInputChange} value={data.fileInput} className="form-input">
+                                <input type="file" id="files" name="image" onChange={handleImageUpload} value={data.fileInput} className="form-input">
 </input>
 
                             </div>
