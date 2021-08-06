@@ -32,7 +32,7 @@ const App = () => {
           <Route exact path="/resources" component={Resources}/>
           <Route exact path="/payment" component={Payment}/>
           <Route exact path="/dropdown" component={dropdown}/>
-
+          
           <Route component={NotFound} />
         </Switch>  
       <Footer />

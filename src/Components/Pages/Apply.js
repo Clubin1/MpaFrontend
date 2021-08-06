@@ -24,7 +24,11 @@ function Apply() {
         treatmentModality: "",
         assessmentEvaluations: "",
         populationsServed: "",
-        languages: ""
+        languages: "",
+        fileInput: "",
+        selectedFile:"",
+        previewSource:"",
+        imageURL: ""
     });
 
     function onChange(e) { // set the key = to the name property equal to the value typed
@@ -109,7 +113,11 @@ function Apply() {
         })
         console.log(data)
     }
+
+
+
     async function submitApplication(event) {
+        event.prevantDefault()
         alert(data.name + ", thank you for your appliaction. We will get back to you shortly. Please submit your payment if required.");
         const response = await fetch("https://blooming-forest-09372.herokuapp.com/psychologists", {
             method: "POST",
@@ -137,17 +145,39 @@ function Apply() {
                     treatmentModality: data.treatmentModality,
                     assessmentEvaluations: data.assessmentEvaluations,
                     populationsServed: data.populationsServed,
-                    languages: data.languages
+                    languages: data.languages,
+                    previewSource: data.previewSource
                 }
             )
         });
 
-        if (! response.ok) {
-            setError(response.statusText);
+        if (!response.ok) {
             console.log(error)
         }
+        if(!data.previewSource) return
+        console.log(data.previewSource,'as;lkdjasl;kdjas;kld;aiskldj;aksld')
+    }
+    const handleFileInputChange = (e) => {
+        const file = e.target.files[0]
+        previewFile(file);
+        setData({
+            ...data,
+            selectedFile: file
+        })
+        setData({
+            ...data,
+            selectedFile: e.target.value
+        })
     }
 
+    const previewFile = (file) => {
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onloadend = () => {
+            const data = reader.result
+            setData({previewSource : data})
+        }
+    }
     return (
         <div>
             <div className="card-section offset">
@@ -1998,6 +2028,11 @@ function Apply() {
                                 <label for="lang7">
                                     Polish</label>
                             </FormGroup>
+                            <div className="uploadForm">
+                                <h3>Upload Photo</h3>
+                                <input type="file" onChange={handleFileInputChange} value={data.fileInput} name="image" className="form-input"></input>
+                            </div>
+
                             <div className="order-button-wrapper">
                                 <input value="Submit Application" type="submit" className="landingButton ni"
                                     data={data}/>
