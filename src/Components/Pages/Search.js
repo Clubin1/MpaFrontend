@@ -59,7 +59,6 @@ const App = () => {
             </div>
             <div className="landingUnder">
                 <Container>
-                    <h1 className="footerLogo"></h1>
                 </Container>
             </div>
             <div className="card-section offset">
