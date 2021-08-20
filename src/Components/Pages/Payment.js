@@ -7,6 +7,7 @@ function Payment() {
 
     const [checkout, setCheckOut] = useState(false);
     const [checkout2, setCheckOut2] = useState(false);
+    const [checkout3, setCheckOut3] = useState(false);
 
     return (
         <div>
@@ -15,7 +16,7 @@ function Payment() {
                     <div className="card-center payment-section">
                         <h1 className="searchTitle">Application Payment</h1>
                         <h5 className="application-info">
-                            To be displayed on the website, payment is required. An inital $15.00 is needed, membership renewals are $35.00. Payment is done via Paypal accounts or credit card information.
+                            To be displayed on the website, payment is required. An inital $15.00 is needed, membership renewals are $35.00, new members with website listings are $50.00. Payment is done via Paypal accounts or credit card information.
                         </h5>
                         <div className="pay-row">
                             <div className="pay-card">
@@ -61,7 +62,30 @@ function Payment() {
                                     </a>
                                 )
                             } </div>
-                        </div>
+
+                        <div className="pay-card">
+                                <h2>
+                                New Member with Website listing
+                                </h2>
+                                <h5 className="payment-offset">
+                                   $50.00
+                                </h5>
+                                {
+                                checkout3 ? (
+                                    <Paypal2/>) : (
+                                    <a
+                                    href="#!"
+                                     className="landingButton" onClick={
+                                        () => {
+                                            setCheckOut3(true);
+                                        }
+                                    }>
+                                        Checkout
+                                    </a>
+                                )
+                            } </div>
+                                                    </div>
+
                     </div>
                 </Container>
             </div>
