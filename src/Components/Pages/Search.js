@@ -59,7 +59,7 @@ const App = () => {
             </div>
             <div className="landingUnder">
                 <Container>
-                    <h1 className="footerLogo">MPACHARLOTTE</h1>
+                    <h1 className="footerLogo"></h1>
                 </Container>
             </div>
             <div className="card-section offset">
@@ -244,7 +244,7 @@ const App = () => {
                                             <h6>Insurance: {
                                                 psych.insuranceAccepted
                                             }</h6>
-                                            <h6>Treatment: {
+                                            <h6>Treatment Approach: {
                                                 psych.treatmentOrientation
                                             }</h6>
                                             <h6>Form of Treatment: {
@@ -257,16 +257,16 @@ const App = () => {
                                                 psych.email
                                             }</h6>
                                             <h6>
-                                                Location:{" "}
-                                                {
-                                                psych.city + " " + psych.state + " " + psych.zip
-                                            } </h6>
-
-<h6>
                                                 Address:{" "}
                                                 {
                                                 psych.address
                                             } </h6>
+                                            <h6>
+                                                {
+                                                psych.city + " " + psych.state + " " + psych.zip
+                                            } </h6>
+
+
                                         </div>
                                         <div className="second-col">
                                             <img alt="Member" className="image"

@@ -19,13 +19,13 @@ body:fade {
 .offset:before {
   display: block;
   content: "";
-  height: 4.5rem;
+  height: 2rem;
 }
 
 .offset2:before {
   display: block;
   content: "";
-  height: 3.5rem;
+  height: 1.5rem;
 }
 
 .navbar {
@@ -107,7 +107,11 @@ body:fade {
   font-weight: 900;
   color: rgb(41, 41, 41);
 }
-
+@media(max-width:769px){
+  .footerLogo{
+    text-align: center;
+  }
+}
 .footerTag {
   width: 100%;
   color: #800000;

@@ -1,9 +1,9 @@
 /* LANDING SECTION  */
 
 #landing {
-  height: 23rem;
+  height: 18rem;
   text-align: right;
-  min-height: 23rem;
+  min-height: 18rem;
   background-repeat: no-repeat !important;
   background-size: contain !important;
   width: 100vw;
@@ -92,7 +92,7 @@
 
 @media (max-width: 767px) {
   #landing {
-    height: 24rem;
+    height: 18rem;
     text-align: center;
     width: 100vw;
 
@@ -104,7 +104,7 @@
 
   }
   #landing.offset {
-    height: 24rem;
+    height: 20rem;
     text-align: center;
     width: 100vw;
 
@@ -137,7 +137,7 @@
 @media(max-width:1068px){
   #landing{
     background-size: 200px 140px!important;
-    background-position: top left;
+    background-position: bottom left;
 
   }
 }
