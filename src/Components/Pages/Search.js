@@ -86,32 +86,18 @@ const App = () => {
                         </div>
                         <div className="inputTotalWrapper">
                         <div className="inputWrapper">
-                        <label>Insurance: </label>
-                            <select id="insurance" onChange={handleChange}>
-                                <option value=""></option>
-                                <option value="None">None</option>
-                                <option value="Accepts Out Of Network Benefits">Accepts Out Of Network Benefits</option>
-                                <option value="Aetna">Aetna</option>
-                                <option value="BC/BS">BC/BS</option>
-                                <option value="BC/BS Blue Value">BC/BS Blue Value</option>
-                                <option value="BC/BS State Employee Plan">BC/BS State Employee Plan</option>
-                                <option value="BC/BS Federal Plan">BC/BS Federal Plan</option>
-                                <option value="CBHA">CBHA</option>
-                                <option value="Cigna">Cigna</option>
-                                <option value="Medcost">Medcost</option>
-                                <option value="Medicare">Medicare</option>
-                                <option value="Medicaid">Medicaid</option>
-                                <option value="Magellan">Magellan</option>
-                                <option value="MHN">MHN</option>
-                                <option value="NC Health Choice">NC Health Choice</option>
-                                <option value="Primary Physicians Care">Primary Physicians Care</option>
-                                <option value="TriCare">TriCare</option>
-                                <option value="United Beh. Health">United Beh. Health</option>
-                                <option value="Value Options">Value Options</option>
-                                <option value="Wellpath">Wellpath</option>
-
+                     
+                            <label>Name: </label>
+                            <select onChange={handleChange}>
+                            <option value=""></option>
+                                {state.map((psych, index) => {
+                                    return(
+                                        <option value={psych.name} key={index}>
+                                            {psych.name}
+                                        </option>
+                                    )
+                                })}
                             </select>
-                            
                             <label>Disorders: </label>
                             <select onChange={handleChange} id="disorders">
                                 <option value=""></option>
@@ -172,17 +158,32 @@ const App = () => {
                                 <option value="Women's Issues">Women's Issues</option>
                                 <option value="Work - Life Balance Issues">Work - Life Balance Issues</option>
                             </select>
+                            <label>Insurance: </label>
+                            <select id="insurance" onChange={handleChange}>
+                                <option value=""></option>
+                                <option value="None">None</option>
+                                <option value="Accepts Out Of Network Benefits">Accepts Out Of Network Benefits</option>
+                                <option value="Aetna">Aetna</option>
+                                <option value="BC/BS">BC/BS</option>
+                                <option value="BC/BS Blue Value">BC/BS Blue Value</option>
+                                <option value="BC/BS State Employee Plan">BC/BS State Employee Plan</option>
+                                <option value="BC/BS Federal Plan">BC/BS Federal Plan</option>
+                                <option value="CBHA">CBHA</option>
+                                <option value="Cigna">Cigna</option>
+                                <option value="Medcost">Medcost</option>
+                                <option value="Medicare">Medicare</option>
+                                <option value="Medicaid">Medicaid</option>
+                                <option value="Magellan">Magellan</option>
+                                <option value="MHN">MHN</option>
+                                <option value="NC Health Choice">NC Health Choice</option>
+                                <option value="Primary Physicians Care">Primary Physicians Care</option>
+                                <option value="TriCare">TriCare</option>
+                                <option value="United Beh. Health">United Beh. Health</option>
+                                <option value="Value Options">Value Options</option>
+                                <option value="Wellpath">Wellpath</option>
 
-                            <label>Name: </label>
-                            <select onChange={handleChange}>
-                                {state.map((psych, index) => {
-                                    return(
-                                        <option value={psych.name} key={index}>
-                                            {psych.name}
-                                        </option>
-                                    )
-                                })}
                             </select>
+                        
                         </div>
                         </div>
                             </div>
