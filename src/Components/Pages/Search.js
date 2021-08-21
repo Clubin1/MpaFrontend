@@ -5,6 +5,8 @@ import {Container} from "react-bootstrap";
 
 import "../../Components/Styles/Styles.css";
 
+
+
 const App = () => {
     const [input, setInput] = useState("");
     let [state, setproduct] = useState([]);
@@ -22,6 +24,7 @@ const App = () => {
             }
         }
         setproduct(userArr);
+  
     }
 
     useEffect(() => {
@@ -45,6 +48,8 @@ const App = () => {
 
     }
 
+
+    
     return (
         <div>
             <div id="landing" className="offset asd">
@@ -79,7 +84,9 @@ const App = () => {
                             <img src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png" alt="Magnifying Glass" class="button"/>
 
                         </div>
-                            <label>Insurance: </label>
+                        <div className="inputTotalWrapper">
+                        <div className="inputWrapper">
+                        <label>Insurance: </label>
                             <select id="insurance" onChange={handleChange}>
                                 <option value=""></option>
                                 <option value="None">None</option>
@@ -177,6 +184,8 @@ const App = () => {
                                 })}
                             </select>
                         </div>
+                        </div>
+                            </div>
 
                     </div>
 

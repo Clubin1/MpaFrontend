@@ -640,7 +640,6 @@ section {
   transition-delay: .1s;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  margin-left: -2rem;
 }
 
 .searchbar:hover {
@@ -934,3 +933,15 @@ a{
   margin-top: 0rem;
 }
 
+
+.inputWrapper{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 20%;
+}
+
+.inputTotalWrapper{
+  display: flex;
+  justify-content: center!important;
+}
