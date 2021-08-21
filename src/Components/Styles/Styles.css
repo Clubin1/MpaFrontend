@@ -639,6 +639,7 @@ section {
   transition: all .2s;
   transition-delay: .1s;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   margin-left: -2rem;
 }
 
