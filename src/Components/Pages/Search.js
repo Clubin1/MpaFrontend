@@ -10,7 +10,8 @@ import "../../Components/Styles/Styles.css";
 const App = () => {
     const [input, setInput] = useState("");
     let [state, setproduct] = useState([]);
-
+    let [insuranceState, setInsurance] = useState([])
+    let [disorderState, setDisorder] = useState([])
     // g
     async function fetchData() {
         let response = await axios(`https://blooming-forest-09372.herokuapp.com/psychologists?_limit=-1`); // ?_limit=-1 is to show all
@@ -47,6 +48,37 @@ const App = () => {
         });
 
     }
+
+    const handleChange2 = (e) => {
+        e.preventDefault();
+        setDisorder(e.target.value);
+        console.log(disorderState)
+    
+    }
+    if (disorderState.length > 0) {
+        state = state.filter((i) => {
+            if (i.insuranceAccepted !== null && i.specialties !== null) {
+                return(i.specialties.toLowerCase().match(disorderState.toLowerCase()))
+            } else {
+            }
+        });
+        
+    };
+    
+    const handleChange3 = (e) => {
+        e.preventDefault();
+        setInsurance(e.target.value);
+        console.log(insuranceState)
+    }
+        if (insuranceState.length > 0) {
+            state = state.filter((i) => {
+                if (i.insuranceAccepted !== null && i.specialties !== null) {
+                    return(i.insuranceAccepted.toLowerCase().match(insuranceState.toLowerCase()))
+                } else {
+                }
+            });
+    };
+    
 
 
     
@@ -99,7 +131,7 @@ const App = () => {
                                 })}
                             </select>
                             <label>Disorders: </label>
-                            <select onChange={handleChange} id="disorders">
+                            <select onChange={handleChange2} id="disorders">
                                 <option value=""></option>
                                 <option value="Adoption">Adoption</option>
                                 <option value="ADHD">ADHD</option>
@@ -159,7 +191,7 @@ const App = () => {
                                 <option value="Work - Life Balance Issues">Work - Life Balance Issues</option>
                             </select>
                             <label>Insurance: </label>
-                            <select id="insurance" onChange={handleChange}>
+                            <select id="insurance" onChange={handleChange3}>
                                 <option value=""></option>
                                 <option value="None">None</option>
                                 <option value="Accepts Out Of Network Benefits">Accepts Out Of Network Benefits</option>
@@ -205,9 +237,7 @@ const App = () => {
                                                 psych.name
                                             }</h3>
                                             <h6>
-                                                <span className="psychItem">Specialties:
-                                                </span>
-                                                {
+                                                Specialties: {
                                                 psych.specialties
                                             }</h6>
                                             <h6>Insurance: {
