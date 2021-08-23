@@ -60,6 +60,11 @@ const App = () => {
             if (i.insuranceAccepted !== null && i.specialties !== null) {
                 return(i.specialties.toLowerCase().match(disorderState.toLowerCase()))
             } else {
+                return(
+                    <div>
+                        Nothing Found
+                    </div>
+                )
             }
         });
         
@@ -75,6 +80,11 @@ const App = () => {
                 if (i.insuranceAccepted !== null && i.specialties !== null) {
                     return(i.insuranceAccepted.toLowerCase().match(insuranceState.toLowerCase()))
                 } else {
+                    return(
+                        <div>
+                            Nothing Found
+                        </div>
+                    )
                 }
             });
     };
@@ -242,6 +252,9 @@ const App = () => {
                                             }</h6>
                                             <h6>Insurance: {
                                                 psych.insuranceAccepted
+                                            }</h6>
+                                            <h6>Assessment Evaluations: {
+                                                psych.assessmentEvaluations
                                             }</h6>
                                             <h6>Treatment Approach: {
                                                 psych.treatmentOrientation

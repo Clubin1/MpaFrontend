@@ -2,15 +2,7 @@ import {Container} from 'react-bootstrap';
 import React from "react";
 
 const Professionals = () => {
-	// let [state, setState] = useState([]);
 	
-    // useEffect(() => {
-    //     getInfo().then(state => setState(state))
-    // }, [])
-
-	// const getInfo = () => {
-	// 	return fetch('https://blooming-forest-09372.herokuapp.com/propages').then(response => response.json())
-	// }
 	
         return (
             <div>
