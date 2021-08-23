@@ -1667,10 +1667,10 @@ function Apply() {
                                 <input onChange={handleLanguages}
                                     type="checkbox"
                                     id="None4"
-                                    name="None"
+                                    name="English"
                                     value="Bike"></input>
                                 <label for="None4">
-                                None</label>
+                                English</label>
                                 <input onChange={handleLanguages}
                                     type="checkbox"
                                     id="lang1"
@@ -1729,8 +1729,9 @@ function Apply() {
                             </div>
 
                             <div className="order-button-wrapper">
-                                <input value="Submit Application" type="submit" className="landingButton ni"
+                                <input value="Submit Application" type="submit" name="submit" className="landingButton ni"
                                     data={data}/>
+                            
                             </div>
                         </form>
                     </div>
