@@ -145,7 +145,7 @@ function Apply() {
     async function submitApplication(event) {
         alert(data.name + ", thank you for your appliaction. We will get back to you shortly. Please submit your payment if required.");
         // https://api.cloudinary.com/v1_1/dm5uxyi2s
-       
+       event.preventDefault()
         const response = await fetch("https://blooming-forest-09372.herokuapp.com/psychologists", {
             method: "POST",
             headers: {
