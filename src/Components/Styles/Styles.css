@@ -707,10 +707,14 @@ section {
 }
 
 .professional-section{
-  height: 70rem;	
-  min-height: 50vh;
+  height: auto;	
+  min-height: 80vh;
+  padding-bottom: 3rem;
 }
 
+.eventTitle{
+  padding-top: 3rem;
+}
 .professionalsImage{
   height: 15rem;
 }

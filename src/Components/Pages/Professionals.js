@@ -29,9 +29,14 @@ const Professionals = () => {
                                 <p>The MPA Member Supervision Listing and MPA Member Office Space Available Listing is information provided by our members. MPA is not endorsing, recommending any psychologist listed and assumes no liability. Please contact psychologists listed for additional and/or updated information regarding availability and services.</p>
                             </div>
                         <img className="professionalsImage" src="/images/memberimg3.jpg" alt=""/>
+                        <div className="eventsWrapper">
+                            <h1 className="eventTitle">Upcoming Events/Announcements</h1>
+                   
 
+                        </div>
                     </Container>
                 </div>
+
             </div>
         );
 }
