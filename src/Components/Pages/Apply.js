@@ -178,10 +178,10 @@ function Apply() {
                 }
             )
         });
-
-        if (! response.ok) {
+        if (!response.ok) {
             setError(response.statusText);
             console.log(error)
+            alert("Please make sure all areas are filled out.");
         }
     }
 
