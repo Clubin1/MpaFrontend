@@ -210,61 +210,61 @@ function Apply() {
                             class="form">
                             <FormGroup>
                                 <Label>Full Name *including title</Label>
-                                <Input required name="name" placeholder="Full Name"
+                                <Input name="name" placeholder="Full Name"
                                     onChange={onChange}/>
                                 
                             </FormGroup>
                             <FormGroup>
                                 <Label>Last Name</Label>
-                                <Input required name="lastName" placeholder="Last Name"
+                                <Input name="lastName" placeholder="Last Name"
                                     onChange={onChange}/>
                             </FormGroup>
                             <Label>Company</Label>
-                            <Input required name="company" placeholder="Company"
+                            <Input name="company" placeholder="Company"
                                 onChange={onChange}/>
                             <FormGroup>
                                 <Label>Address</Label>
-                                <Input required name="address" placeholder="Address"
+                                <Input name="address" placeholder="Address"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>City</Label>
-                                <Input required name="city" placeholder="City"
+                                <Input name="city" placeholder="City"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>State</Label>
-                                <Input required name="state" placeholder="State"
+                                <Input name="state" placeholder="State"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>Zipcode</Label>
-                                <Input required name="zip" placeholder="Zipcode"
+                                <Input name="zip" placeholder="Zipcode"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>Phone</Label>
-                                <Input required name="phone" placeholder="Phone Number"
+                                <Input name="phone" placeholder="Phone Number"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>Other Phone</Label>
-                                <Input required name="otherPhone" placeholder="Second Phone Number"
+                                <Input name="otherPhone" placeholder="Second Phone Number"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>Fax</Label>
-                                <Input required name="fax" placeholder="Fax Number"
+                                <Input name="fax" placeholder="Fax Number"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>Email</Label>
-                                <Input required name="email" placeholder="Email Address"
+                                <Input name="email" placeholder="Email Address"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>Website</Label>
-                                <Input required name="website" placeholder="Website"
+                                <Input name="website" placeholder="Website"
                                     onChange={onChange}/>
                             </FormGroup>
                             <div className="rowApp">
