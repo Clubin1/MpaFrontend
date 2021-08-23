@@ -210,61 +210,61 @@ function Apply() {
                             class="form">
                             <FormGroup>
                                 <Label>Full Name *including title</Label>
-                                <Input required="required" name="name" placeholder="Full Name"
+                                <Input required name="name" placeholder="Full Name"
                                     onChange={onChange}/>
                                 
                             </FormGroup>
                             <FormGroup>
                                 <Label>Last Name</Label>
-                                <Input required="required" name="lastName" placeholder="Last Name"
+                                <Input required name="lastName" placeholder="Last Name"
                                     onChange={onChange}/>
                             </FormGroup>
                             <Label>Company</Label>
-                            <Input required="required" name="company" placeholder="Company"
+                            <Input required name="company" placeholder="Company"
                                 onChange={onChange}/>
                             <FormGroup>
                                 <Label>Address</Label>
-                                <Input required="required" name="address" placeholder="Address"
+                                <Input required name="address" placeholder="Address"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>City</Label>
-                                <Input required="required" name="city" placeholder="City"
+                                <Input required name="city" placeholder="City"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>State</Label>
-                                <Input required="required" name="state" placeholder="State"
+                                <Input required name="state" placeholder="State"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>Zipcode</Label>
-                                <Input required="required" name="zip" placeholder="Zipcode"
+                                <Input required name="zip" placeholder="Zipcode"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>Phone</Label>
-                                <Input required="required" name="phone" placeholder="Phone Number"
+                                <Input required name="phone" placeholder="Phone Number"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>Other Phone</Label>
-                                <Input required="required" name="otherPhone" placeholder="Second Phone Number"
+                                <Input required name="otherPhone" placeholder="Second Phone Number"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>Fax</Label>
-                                <Input required="required" name="fax" placeholder="Fax Number"
+                                <Input required name="fax" placeholder="Fax Number"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>Email</Label>
-                                <Input required="required" name="email" placeholder="Email Address"
+                                <Input required name="email" placeholder="Email Address"
                                     onChange={onChange}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label>Website</Label>
-                                <Input required="required" name="website" placeholder="Website"
+                                <Input required name="website" placeholder="Website"
                                     onChange={onChange}/>
                             </FormGroup>
                             <div className="rowApp">
@@ -272,15 +272,26 @@ function Apply() {
                                     <Label className="checkLabel">Specialties:
                                     </Label>
                                     <ul>
-
-                                        <li>
-                                            <input onChange={handleDisorders}
+                                    <li>
+                                             <input onChange={handleDisorders}
+                                                type="checkbox"
+                                                id="disNone"
+                                                name="None"
+                                                value="None"></input>
+                                            <label for="disNone">
+                                            None</label>
+                                           
+                            
+                                        </li>
+                                    <li>
+                                             <input onChange={handleDisorders}
                                                 type="checkbox"
                                                 id="Adoption"
                                                 name="Adoption"
                                                 value="Bike"></input>
                                             <label for="Adoption">
                                                 Adoption</label>
+                                          
                                         </li>
                                         <li>
                                             <input onChange={handleDisorders}
@@ -807,13 +818,14 @@ function Apply() {
                                         <Label className="checkLabel">Insurance Accepted:
                                         </Label>
                                         <ul>
+                                            
                                             <li>
                                                 <input onChange={handleInsurance}
                                                     type="checkbox"
-                                                    id="None"
+                                                    id="InusranceNone"
                                                     name="None"
                                                     value="Bike"></input>
-                                                <label for="None">
+                                                <label for="InusranceNone">
                                                     None</label>
                                             </li>
                                             <li>
@@ -995,16 +1007,7 @@ function Apply() {
                                                 <label for="Wellpath">
                                                     Wellpath</label>
                                             </li>
-                                            <li>
-                                                <input onChange={handleInsurance}
-                                                    type="checkbox"
-                                                    id="None"
-                                                    name="None"
-                                                    value="Bike"></input>
-                                                <label for="None">
-                                                    None</label>
-                                            </li>
-                                           
+                                            
                                         </ul>
 
                                     </FormGroup>
@@ -1015,6 +1018,15 @@ function Apply() {
                                             <Label className="checkLabel">Treatment Orientation:
                                             </Label>
                                             <ul>
+                                            <li>
+                                                <input onChange={treatmentOrientation}
+                                                    type="checkbox"
+                                                    id="treatmentNone"
+                                                    name="None"
+                                                    value="Bike"></input>
+                                                <label for="treatmentNone">
+                                                    None</label>
+                                            </li>
                                                 <li>
                                                     <input onChange={treatmentOrientation}
                                                         type="checkbox"
@@ -1255,6 +1267,15 @@ function Apply() {
                                             <Label className="checkLabel">Assement Evaluations:
                                             </Label>
                                             <ul>
+                                            <li>
+                                                <input onChange={handleInsurance}
+                                                    type="checkbox"
+                                                    id="NoneAss"
+                                                    name="None"
+                                                    value="NoneAss"></input>
+                                                <label for="NoneAss">
+                                                    None</label>
+                                            </li>
                                                 <li>
                                                     <input onChange={handleAssessments}
                                                         type="checkbox"
@@ -1559,6 +1580,13 @@ function Apply() {
                                 </Label>
                                 <input onChange={handleTreatment}
                                     type="checkbox"
+                                    id="None1"
+                                    name="None"
+                                    value="None"></input>
+                                <label for="None1">
+                                None</label>
+                                <input onChange={handleTreatment}
+                                    type="checkbox"
                                     id="mode1"
                                     name="Individual"
                                     value="Bike"></input>
@@ -1590,6 +1618,13 @@ function Apply() {
                             <FormGroup>
                                 <Label className="checkLabel">Populations Served:
                                 </Label>
+                                <input onChange={handlePopulation}
+                                    type="checkbox"
+                                    id="Non2"
+                                    name="None"
+                                    value="Bike"></input>
+                                <label for="Non2">
+                                None</label>
                                 <input onChange={handlePopulation}
                                     type="checkbox"
                                     id="pop1"
@@ -1629,6 +1664,13 @@ function Apply() {
                             <FormGroup>
                                 <Label className="checkLabel">Languages:
                                 </Label>
+                                <input onChange={handleLanguages}
+                                    type="checkbox"
+                                    id="None4"
+                                    name="None"
+                                    value="Bike"></input>
+                                <label for="None4">
+                                None</label>
                                 <input onChange={handleLanguages}
                                     type="checkbox"
                                     id="lang1"
