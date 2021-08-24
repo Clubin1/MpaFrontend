@@ -949,3 +949,7 @@ a{
   display: flex;
   justify-content: center!important;
 }
+
+.eventCard{
+  padding-top: 2rem;
+}
