@@ -1,5 +1,6 @@
 import {Container} from "react-bootstrap";
 import React, {useState} from "react";
+import { formatPhoneNumber } from 'react-phone-number-input'
 
 import {FormGroup, Label, Input} from "reactstrap";
 import '../Styles/Styles.css'
@@ -13,9 +14,11 @@ function Apply() {
         city: "",
         state: "",
         zip: "",
+
         phone: "",
         otherPhone: "",
         fax: "",
+
         email: "",
         website: "",
         specialties: "",
@@ -146,6 +149,15 @@ function Apply() {
         alert(data.name + ", thank you for your appliaction. We will get back to you shortly. Please submit your payment if required.");
         // https://api.cloudinary.com/v1_1/dm5uxyi2s
        event.preventDefault()
+       let formatedNumber = data.phone
+       formatedNumber = (formatPhoneNumber(`+1${formatedNumber}`))
+       
+       let formatedSecondNumber = data.otherPhone
+       formatedSecondNumber = (formatPhoneNumber(`+1${formatedSecondNumber}`))
+
+       let formatedFaxNumber = data.fax
+       formatedFaxNumber = (formatPhoneNumber(`+1${formatedFaxNumber}`))
+
         const response = await fetch("https://blooming-forest-09372.herokuapp.com/psychologists", {
             method: "POST",
             headers: {
@@ -161,9 +173,9 @@ function Apply() {
                     city: data.city,
                     state: data.state,
                     zip: data.zip,
-                    phone: data.phone,
-                    otherPhone: data.otherPhone,
-                    fax: data.fax,
+                    phone: formatedNumber,
+                    otherPhone: formatedSecondNumber,
+                    fax: formatedFaxNumber,
                     email: data.email,
                     website: data.website,
                     specialties: data.specialties,
@@ -184,7 +196,6 @@ function Apply() {
             alert("Please make sure all areas are filled out.");
         }
     }
-
 
 
     return (
