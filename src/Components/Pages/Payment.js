@@ -43,29 +43,7 @@ function Payment() {
                             } </div>
                             <div className="pay-card">
                                 <h2>
-                                    Initial Website Listing
-                                </h2>
-                                <h5 className="payment-offset">
-                                   $15.00
-                                </h5>
-                                {
-                                checkout2 ? (
-                                    <Paypal2/>) : (
-                                    <a
-                                    href="#!"
-                                     className="landingButton" onClick={
-                                        () => {
-                                            setCheckOut2(true);
-                                        }
-                                    }>
-                                        Checkout
-                                    </a>
-                                )
-                            } </div>
-
-                        <div className="pay-card">
-                                <h2>
-                                New Member with Website listing
+                                New Member with Website Listing
                                 </h2>
                                 <h5 className="payment-offset">
                                    $50.00
@@ -84,7 +62,38 @@ function Payment() {
                                     </a>
                                 )
                             } </div>
-                                                    </div>
+                            <div className="pay-card">
+                                <h2>
+                                New Member without Website Listing 50.00
+                                </h2>
+                                <h5 className="payment-offset">
+                                   $35.00
+                                </h5>
+                                {
+                                checkout2 ? (
+                                    <Paypal2/>) : (
+                                    <a
+                                    href="#!"
+                                     className="landingButton" onClick={
+                                        () => {
+                                            setCheckOut2(true);
+                                        }
+                                    }>
+                                        Checkout
+                                    </a>
+                                )
+                            } </div>
+
+                        
+                            <div className="pay-card">
+                                <h2>
+                                    Retired
+                                </h2>
+                                <h5 className="payment-offset">
+                                   $0.00
+                                </h5>
+                                 </div>
+                            </div>
 
                     </div>
                 </Container>

@@ -1607,13 +1607,21 @@ function Apply() {
                                 <label for="mode3">
                                     Family</label>
 
-                                <input onChange={handleTreatment}
+                                    <input onChange={handleTreatment}
                                     type="checkbox"
                                     id="mode4"
                                     name="Group"
                                     value="Bike3"></input>
                                 <label for="mode4">
                                     Group</label>
+
+                                    <input onChange={handleTreatment}
+                                    type="checkbox"
+                                    id="mode5"
+                                    name="Telehealth"
+                                    value="Bike3"></input>
+                                <label for="mode5">
+                                Telehealth</label>
                             </FormGroup>
                             <FormGroup>
                                 <Label className="checkLabel">Populations Served:

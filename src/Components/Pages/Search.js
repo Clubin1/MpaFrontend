@@ -24,7 +24,7 @@ const App = () => {
                 userArr.push(user[i]);
             }
         }
-        setproduct(userArr);
+        setproduct(userArr.sort((a,b) => a.name.localeCompare(b.name)));
   
     }
 
@@ -247,36 +247,34 @@ const App = () => {
                                                 psych.name
                                             }</h3>
                                             <h6>
-                                                Specialties: {
+                                            <span className="cardBold">Specialties: </span>{
                                                 psych.specialties
                                             }</h6>
-                                            <h6>Insurance: {
-                                                psych.insuranceAccepted
-                                            }</h6>
-                                            <h6>Assessment Evaluations: {
+                                            <h6><span className="cardBold">Assessment Evaluations: </span>{
                                                 psych.assessmentEvaluations
                                             }</h6>
-                                            <h6>Treatment Approach: {
+                                            <h6><span className="cardBold">Treatment Approach: </span>{
                                                 psych.treatmentOrientation
                                             }</h6>
-                                            <h6>Form of Treatment: {
+                                            <h6><span className="cardBold">Form of Treatment: </span>{
                                                 psych.treatmentModality
                                             }</h6>
-                                            <h6>Phone: {
+                                            <h6><span className="cardBold">Insurance: </span> {
+                                                psych.insuranceAccepted
+                                            }</h6>                                         
+                                            <h6><span className="cardBold">Phone: </span> {
                                                 psych.phone
                                             }</h6>
-                                            <h6>Email: {
+                                            <h6><span className="cardBold">Email: </span>{
                                                 psych.email
                                             }</h6>
                                             <h6>
-                                                Address:{" "}
+                                                <span className="cardBold">Address:</span>{" "}
                                                 {
                                                 psych.address
                                             } </h6>
-                                            <h6>
-                                                {
-                                                psych.city + " " + psych.state + " " + psych.zip
-                                            } </h6>
+                                            
+                                            <p><span className="thingasd"href=""></span>{psych.city + " " + psych.state + " " + psych.zip} </p>
 
 
                                         </div>
