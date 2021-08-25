@@ -261,7 +261,10 @@ const App = () => {
                                             }</h6>
                                             <h6><span className="cardBold">Insurance: </span> {
                                                 psych.insuranceAccepted
-                                            }</h6>                                         
+                                            }</h6>   
+                                             <h6><span className="cardBold">Website: </span> {
+                                                psych.website
+                                            }</h6>                                      
                                             <h6><span className="cardBold">Phone: </span> {
                                                 psych.phone
                                             }</h6>
