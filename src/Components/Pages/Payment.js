@@ -64,7 +64,7 @@ function Payment() {
                             } </div>
                             <div className="pay-card">
                                 <h2>
-                                New Member without Website Listing 50.00
+                                New Member without Website Listing
                                 </h2>
                                 <h5 className="payment-offset">
                                    $35.00
