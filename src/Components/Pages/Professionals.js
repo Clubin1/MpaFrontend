@@ -14,44 +14,50 @@ const Professionals = () => {
     useEffect(() => {
         fetchData();
     }, []);
-    console.log(state) 
-        return (
-            <div>
-                <div className="offset professional-section">
-                    <Container> 
-                            <div>
-                                <h1>Become a MPA member today</h1>
-                                <p>Membership in the Mecklenburg Psychological Association shall be open to those (1) who are able to verify that they are a permanent or temporary Licensed Psychologist, Licensed Psychological Associate, or a Certified School Psychologist in North Carolina, or (2) who are able to verify membership in APA, NCPA, NCSPA, or NASP. An individual who is in any of the above categories may become a member of the MPA. Student affiliate memberships are also open to graduate students in advanced study programs in psychology. The application must include a letter from the department verifying degree candidacy or include a current official transcript.</p>
-                                <a href="/application" className="landingButton">Application</a>
-                                <a href="/payment" className="landingButton ge">Payment</a>
+    console.log(state)
+    return (
+        <div>
+            <div className="offset professional-section">
+                <Container>
+                    <div>
+                        <h1>Become a MPA member today</h1>
+                        <p>Membership in the Mecklenburg Psychological Association shall be open to those (1) who are able to verify that they are a permanent or temporary Licensed Psychologist, Licensed Psychological Associate, or a Certified School Psychologist in North Carolina, or (2) who are able to verify membership in APA, NCPA, NCSPA, or NASP. An individual who is in any of the above categories may become a member of the MPA. Student affiliate memberships are also open to graduate students in advanced study programs in psychology. The application must include a letter from the department verifying degree candidacy or include a current official transcript.</p>
+                        <a href="/application" className="landingButton">Application</a>
+                        <a href="/payment" className="landingButton ge">Payment</a>
+                    </div>
+                    <div className="eventsWrapper">
+                        <h1 className="eventTitle">Upcoming Events/Announcements</h1>
+                        <p>Below are a list of upcoming MPA related events, a time and date will be supplied with any additional information.</p>
+                        {
+                        state.map((event, index) => <div className="eventCard" key="index">
+                            <div key={
+                                index + 1
+                            }>
+                                <h3>{
+                                    event.eventHeader
+                                }</h3>
+                                <p>{
+                                    event.eventDate
+                                }</p>
+                                <p>{
+                                    event.eventText
+                                }</p>
+
                             </div>
-                            
-                            <div>
-                                <h1 className="professionalHeader">
-                                MPA Supervision/Office Space Listings</h1>
-                                <p>The MPA Member Supervision Listing and MPA Member Office Space Available Listing is information provided by our members. MPA is not endorsing, recommending any psychologist listed and assumes no liability. Please contact psychologists listed for additional and/or updated information regarding availability and services.</p>
-                            </div>
-                        <img className="professionalsImage" src="/images/memberimg3.jpg" alt=""/>
+                        </div>)
+                    } </div>
 
-                        <div className="eventsWrapper">
-                            <h1 className="eventTitle">Upcoming Events/Announcements</h1>
-                            <p>Below are a list of upcoming MPA related events, a time and date will be supplied with any additional information.</p>
-                            {state.map((event, index) =>
-                                <div className="eventCard" key="index">
-                                    <div key={index + 1}>
-                                        <h3>{event.eventHeader}</h3>
-                                        <p>{event.eventDate}</p>
-                                        <p>{event.eventText}</p>
-
-                                    </div>
-                                </div>
-				            )}
-                        </div>
-                    </Container>
-                </div>
-
+                    <div>
+                        <h1 className="professionalHeader">
+                            MPA Supervision/Office Space Listings</h1>
+                        <p>The MPA Member Supervision Listing and MPA Member Office Space Available Listing is information provided by our members. MPA is not endorsing, recommending any psychologist listed and assumes no liability. Please contact psychologists listed for additional and/or updated information regarding availability and services.</p>
+                    </div>
+                    <img className="professionalsImage" src="/images/memberimg3.jpg" alt=""/>
+                </Container>
             </div>
-        );
+
+        </div>
+    );
 }
 
 export default Professionals;
