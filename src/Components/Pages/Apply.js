@@ -1742,9 +1742,12 @@ function Apply() {
                             </FormGroup>
                             <div className="uploadForm">
                                 <h3>Upload Photo</h3>
-                                <input type="file" id="files" name="image" onChange={handleImageUpload} value={data.fileInput} className="form-input">
-</input>
+                               <div className="hideButtonWrapper">
+                                <p className="hideButtonText">Browse...</p>
+                               <input type="file" id="files" name="image" onChange={handleImageUpload} value={data.fileInput} className="form-input hideButton">
+                                </input>
 
+                               </div>
                             </div>
 
                             <div className="order-button-wrapper">

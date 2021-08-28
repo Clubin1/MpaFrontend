@@ -973,3 +973,23 @@ a{
   -moz-opacity: 0;
 
 }
+
+.hideButton{
+  height: 3rem;
+  width: 10rem;
+  position: absolute;
+  margin-top:-2rem;
+  opacity:0;
+}
+.hideButtonWrapper{
+  background-color: red;
+  height: 3rem;
+  width: 10rem;
+  color:white;
+  display: flex;
+  justify-content: center;
+}
+
+.hideButtonText{
+  margin-top: .6rem;
+}
