@@ -41,14 +41,14 @@ class Resources extends Component {
                             Resources for Early Career Psychologists and Students
                         </h4>
                         <p>
-                            <a className="reasource-link" href="https://www.apa.org/careers/early-career/index">APA Early Career Psychologist Resources</a>
+                            <a className="reasource-link" href="https://www.apa.org/education-career/development/early">APA Early Career Psychologist Resources</a>
                         </p>
                         <h4>
                             Resources for Early Career Psychologists and Students
                         </h4>
                         <p>
                             <a className="reasource-link" href="https://www.nami.org/Home">
-                                National Alliance for the Mentally Ill</a>
+                                National Alliance for the Mentally Ill </a>
                             NAMI is a nonprofit, grassroots, self-help, support and advocacy organization of consumers, families, and friends of people with severe mental illnesses.
                         </p>
                         <p>

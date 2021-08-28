@@ -967,3 +967,9 @@ a{
 .eventCard{
   padding-top: 2rem;
 }
+.hidden {
+  /*Opacity settings for all browsers*/
+  opacity: 0;
+  -moz-opacity: 0;
+
+}

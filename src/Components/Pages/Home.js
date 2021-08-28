@@ -65,7 +65,7 @@ const Home = () => {
                 <p className="search-info twotime">
                                 Welcome to the Mecklenburg
                                                                                                 				Psychological Association (MPA) Psychologist Membership & Referral
-                                                                                                				Directory. Search for disorders, location and name.
+                                                                                                				Directory. Search for specialities, location and name.
                             </p>
                             <p className="search-info">
                                 The Mecklenburg Psychological Association provides this

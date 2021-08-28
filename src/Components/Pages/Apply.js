@@ -220,7 +220,7 @@ function Apply() {
                         <form onSubmit={submitApplication}
                             class="form">
                             <FormGroup>
-                                <Label>Full Name *including title</Label>
+                                <Label>Full Name Full Name (include degree ex:  Mary Smith, Ph.D.)</Label>
                                 <Input name="name" placeholder="Full Name"
                                     onChange={onChange}/>
                                 
