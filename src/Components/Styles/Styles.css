@@ -978,8 +978,8 @@ a{
   height: 3rem;
   width: 10rem;
   position: absolute;
-  margin-top:-2rem;
-  opacity:0;
+  margin-top:.5rem;
+  opacity: 0;
 }
 .hideButtonWrapper{
   background-color: red;
