@@ -28,16 +28,7 @@ const App = () => {
         }
 
         // Set old url to new url
-        for (i = 0; i < userArr.length; i++){
-            if (userArr[i].ps_url !== null){
-                let b = "a_ignore/";
-                let position = 50;        
-                let a = user[i].ps_url;
-                userArr[i].ps_url = [a.slice(0, position), b, a.slice(position)].join('')
-            } else {
-                console.log("error")
-            }
-        }
+       
         setproduct(userArr.sort((a,b) => a.name.localeCompare(b.name)));
     }
 
