@@ -1748,8 +1748,8 @@ function Apply() {
                                 </input>
                                </div>
                             </div>
-                            <img  className="previewImage" alt="Preview how your image will look on the website"src={data.ps_url}/>
-                         
+                            <p>Preview exactly how your image will look on the website. Make sure the orientation is how you want it to be.</p>
+                            <img  className="previewImage" alt="Upload"src={data.ps_url}/>
                             <div className="order-button-wrapper">
                                 <input value="Submit Application" type="submit" name="submit" className="landingButton ni"
                                     data={data}/>

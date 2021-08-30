@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import ExifOrientationImg from 'react-exif-orientation-img'
 // import Landing from "../../Components/Sections/Landing.js";
 import {Container} from "react-bootstrap";
 
@@ -20,7 +19,6 @@ const App = () => {
         let user = await response.data;
         let userArr = [];
         let userNum = user.length;
-        let fixedArray = []
        
         // Set array to only if true
         for (var i = 0; i < userNum; i++) {
@@ -30,7 +28,7 @@ const App = () => {
         }
 
         // Set old url to new url
-        for (var i = 0; i < userArr.length; i++){
+        for (i = 0; i < userArr.length; i++){
             if (userArr[i].ps_url !== null){
                 let b = "a_ignore/";
                 let position = 50;        
