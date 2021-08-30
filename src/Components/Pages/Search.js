@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import ExifOrientationImg from 'react-exif-orientation-img'
 // import Landing from "../../Components/Sections/Landing.js";
 import {Container} from "react-bootstrap";
 
@@ -12,20 +13,34 @@ const App = () => {
     let [state, setproduct] = useState([]);
     let [insuranceState, setInsurance] = useState([])
     let [disorderState, setDisorder] = useState([])
+
     // g
     async function fetchData() {
         let response = await axios(`https://blooming-forest-09372.herokuapp.com/psychologists?_limit=-1`); // ?_limit=-1 is to show all
         let user = await response.data;
         let userArr = [];
         let userNum = user.length;
-
+        let fixedArray = []
+       
+        // Set array to only if true
         for (var i = 0; i < userNum; i++) {
             if (user[i].isAccepted === true) {
                 userArr.push(user[i]);
             }
         }
+
+        // Set old url to new url
+        for (var i = 0; i < userArr.length; i++){
+            if (userArr[i].ps_url !== null){
+                let b = "a_ignore/";
+                let position = 50;        
+                let a = user[i].ps_url;
+                userArr[i].ps_url = [a.slice(0, position), b, a.slice(position)].join('')
+            } else {
+                console.log("error")
+            }
+        }
         setproduct(userArr.sort((a,b) => a.name.localeCompare(b.name)));
-  
     }
 
     useEffect(() => {
@@ -90,8 +105,6 @@ const App = () => {
     };
     
 
-
-    
     return (
         <div>
             <div id="landing" className="offset asd">
@@ -271,6 +284,7 @@ const App = () => {
                                             <h6><span className="cardBold">Email: </span>{
                                                 psych.email
                                             }</h6>
+                                              
                                             <h6>
                                                 <span className="cardBold">Address:</span>{" "}
                                                 {
@@ -284,6 +298,8 @@ const App = () => {
                                         <div className="second-col">
                                             <img alt="Member" className="image"
                                                 src={psych.ps_url}/>
+
+                                            
                                         </div>
                                     </div>
                                 </div>

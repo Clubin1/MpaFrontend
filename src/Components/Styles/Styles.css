@@ -993,3 +993,9 @@ a{
 .hideButtonText{
   margin-top: .6rem;
 }
+
+.previewImage{
+  height: 20rem;
+  width: 20rem;
+  margin-top: 2rem;
+}

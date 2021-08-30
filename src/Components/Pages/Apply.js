@@ -1746,10 +1746,10 @@ function Apply() {
                                 <p className="hideButtonText">Browse...</p>
                                <input type="file" id="files" name="image" onChange={handleImageUpload} value={data.fileInput} className="form-input hideButton">
                                 </input>
-
                                </div>
                             </div>
-
+                            <img  className="previewImage" alt="Preview how your image will look on the website"src={data.ps_url}/>
+                         
                             <div className="order-button-wrapper">
                                 <input value="Submit Application" type="submit" name="submit" className="landingButton ni"
                                     data={data}/>
