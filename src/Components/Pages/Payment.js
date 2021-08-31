@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Container} from 'react-bootstrap'
 import Paypal from '../../Components/Sections/Paypal'
 import Paypal2 from '../../Components/Sections/Paypal2'
-
+import Paypal3 from '../Sections/Paypal3';
 function Payment() {
 
     const [checkout, setCheckOut] = useState(false);
@@ -71,7 +71,7 @@ function Payment() {
                                 </h5>
                                 {
                                 checkout2 ? (
-                                    <Paypal2/>) : (
+                                    <Paypal3/>) : (
                                     <a
                                     href="#!"
                                      className="landingButton" onClick={

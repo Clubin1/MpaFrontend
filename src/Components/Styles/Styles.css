@@ -121,7 +121,8 @@ body:fade {
 
 .pay-card{
   margin-left: 2rem;
-  height: 15rem;
+  min-height: 15rem;
+  height: auto;
 }
 .card-section{
   background-color:white!important;
