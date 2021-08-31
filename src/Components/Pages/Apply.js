@@ -50,7 +50,12 @@ function Apply() {
         let insurance = data.insuranceAccepted + ", " + e.target.name
         insurance = insurance.replace(/^,/, '')
         insurance = insurance.trimStart()
-
+        if(data.insuranceAccepted.includes(e.target.name)) {
+            console.log("dup")
+            insurance = insurance.replaceAll(`, ${e.target.name}`,"")
+            insurance.trimStart()
+            insurance.trimEnd()
+        }
         setData({
             ...data,
             insuranceAccepted: insurance
@@ -59,9 +64,15 @@ function Apply() {
     }
 
     function handleDisorders(e) {
-        let specialties = data.specialties + ", " + e.target.name
+        let specialties = data.specialties+ ", " + e.target.name
         specialties = specialties.replace(/^,/, '')
         specialties = specialties.trimStart()
+        if(data.specialties.includes(e.target.name)) {
+            console.log("dup")
+            specialties = specialties.replaceAll(`, ${e.target.name}`,"")
+            specialties.trimStart()
+            specialties.trimEnd()
+        }
         setData({
             ...data,
             specialties: specialties
@@ -72,7 +83,12 @@ function Apply() {
         let assessmentEvaluations = data.assessmentEvaluations + ", " + e.target.name
         assessmentEvaluations = assessmentEvaluations.replace(/^,/, '')
         assessmentEvaluations = assessmentEvaluations.trimStart()
-
+        if(data.assessmentEvaluations.includes(e.target.name)) {
+            console.log("dup")
+            assessmentEvaluations = assessmentEvaluations.replaceAll(`, ${e.target.name}`,"")
+            assessmentEvaluations.trimStart()
+            assessmentEvaluations.trimEnd()
+        }
         setData({
             ...data,
             assessmentEvaluations: assessmentEvaluations
@@ -83,6 +99,12 @@ function Apply() {
         let treatmentModality = data.treatmentModality + ", " + e.target.name
         treatmentModality = treatmentModality.replace(/^,/, '')
         treatmentModality = treatmentModality.trimStart()
+        if(data.treatmentModality.includes(e.target.name)) {
+            console.log("dup")
+            treatmentModality = treatmentModality.replaceAll(`, ${e.target.name}`,"")
+            treatmentModality.trimStart()
+            treatmentModality.trimEnd()
+        }
         setData({
             ...data,
             treatmentModality: treatmentModality
@@ -93,6 +115,12 @@ function Apply() {
         let populationsServed = data.populationsServed + ", " + e.target.name
         populationsServed = populationsServed.replace(/^,/, '')
         populationsServed = populationsServed.trimStart()
+        if(data.populationsServed.includes(e.target.name)) {
+            console.log("dup")
+            populationsServed = populationsServed.replaceAll(`, ${e.target.name}`,"")
+            populationsServed.trimStart()
+            populationsServed.trimEnd()
+        }
         setData({
             ...data,
             populationsServed: populationsServed
@@ -103,6 +131,12 @@ function Apply() {
         let languages = data.languages + ", " + e.target.name
         languages = languages.replace(/^,/, '')
         languages = languages.trimStart()
+        if(data.languages.includes(e.target.name)) {
+            console.log("dup")
+            languages = languages.replaceAll(`, ${e.target.name}`,"")
+            languages.trimStart()
+            languages.trimEnd()
+        }
         setData({
             ...data,
             languages: languages
@@ -113,6 +147,12 @@ function Apply() {
         let treatmentOrientation = data.treatmentOrientation + ", " + e.target.name
         treatmentOrientation = treatmentOrientation.replace(/^,/, '')
         treatmentOrientation = treatmentOrientation.trimStart()
+        if(data.treatmentOrientation.includes(e.target.name)) {
+            console.log("dup")
+            treatmentOrientation = treatmentOrientation.replaceAll(`, ${e.target.name}`,"")
+            treatmentOrientation.trimStart()
+            treatmentOrientation.trimEnd()
+        }
         setData({
             ...data,
             treatmentOrientation: treatmentOrientation
@@ -1279,7 +1319,7 @@ function Apply() {
                                             </Label>
                                             <ul>
                                             <li>
-                                                <input onChange={handleInsurance}
+                                                <input onChange={handleAssessments}
                                                     type="checkbox"
                                                     id="NoneAss"
                                                     name="None"
@@ -1381,15 +1421,7 @@ function Apply() {
                                                     <label for="ADHD-Child/Adolescent">
                                                         ADHD-Child/Adolescent</label>
                                                 </li>
-                                                <li>
-                                                    <input onChange={handleAssessments}
-                                                        type="checkbox"
-                                                        id="Neuropsychological"
-                                                        name="Neuropsychological"
-                                                        value="Bike2"></input>
-                                                    <label for="Neuropsychological">
-                                                        Insurance 2</label>
-                                                </li>
+                                               
                                                 <li>
                                                     <input onChange={handleAssessments}
                                                         type="checkbox"
