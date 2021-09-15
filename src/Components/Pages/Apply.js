@@ -260,6 +260,7 @@ function Apply() {
                         <form onSubmit={submitApplication}
                             class="form">
                             <FormGroup>
+                                <h6 className="formOffset">While filling out the form, please select all options that apply to you. If none apply, select the None option.</h6>
                                 <Label>Full Name Full Name (include degree ex:  Mary Smith, Ph.D.)</Label>
                                 <Input name="name" placeholder="Full Name"
                                     onChange={onChange}/>
@@ -320,8 +321,10 @@ function Apply() {
                             </FormGroup>
                             <div className="rowApp">
                                 <FormGroup className="formWidth">
+                                
                                     <Label className="checkLabel">Specialties:
                                     </Label>
+                                    <h6>Please select at least one option.</h6>
                                     <ul>
                                     <li>
                                              <input onChange={handleDisorders}
@@ -868,6 +871,7 @@ function Apply() {
                                     <FormGroup className="formWidth">
                                         <Label className="checkLabel">Insurance Accepted:
                                         </Label>
+                                        <h6>Please select at least one option.</h6>
                                         <ul>
                                             
                                             <li>

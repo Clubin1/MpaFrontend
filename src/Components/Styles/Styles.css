@@ -124,6 +124,10 @@ body:fade {
   min-height: 15rem;
   height: auto;
 }
+
+.formOffset{
+  margin-top: 2rem;
+}
 .card-section{
   background-color:white!important;
 }

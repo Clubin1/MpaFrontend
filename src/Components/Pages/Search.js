@@ -61,7 +61,7 @@ const App = () => {
     }
     if (disorderState.length > 0) {
         state = state.filter((i) => {
-            if (i.insuranceAccepted !== null && i.specialties !== null) {
+            if (i.insuranceAccepted !== null && i.specialties !== null){
                 return(i.specialties.toLowerCase().match(disorderState.toLowerCase()))
             } else {
                 return(
@@ -142,7 +142,7 @@ const App = () => {
                                     )
                                 })}
                             </select>
-                            <label>Disorders: </label>
+                            <label>Specialties: </label>
                             <select onChange={handleChange2} id="disorders">
                                 <option value=""></option>
                                 <option value="Adoption">Adoption</option>
