@@ -63,10 +63,17 @@ const App = () => {
         state = state.filter((i) => {
             if (i.insuranceAccepted !== null && i.specialties !== null){
                 return(i.specialties.toLowerCase().match(disorderState.toLowerCase()))
-            } else {
+            }else if(i.insuranceAccepted === "" || i.specialties === ""){
                 return(
                     <div>
-                        Nothing Found
+
+                    </div>
+                )
+            }
+            else{
+                return(
+                    <div>
+
                     </div>
                 )
             }
@@ -83,10 +90,17 @@ const App = () => {
             state = state.filter((i) => {
                 if (i.insuranceAccepted !== null && i.specialties !== null) {
                     return(i.insuranceAccepted.toLowerCase().match(insuranceState.toLowerCase()))
-                } else {
+                }else if(i.insuranceAccepted === "" || i.specialties === ""){
                     return(
                         <div>
-                            Nothing Found
+    
+                        </div>
+                    )
+                }
+                else{
+                    return(
+                        <div>
+    
                         </div>
                     )
                 }

@@ -333,7 +333,7 @@ function Apply() {
                                                 name="None"
                                                 value="None"></input>
                                             <label for="disNone">
-                                            None</label>
+                                            Other</label>
                                            
                             
                                         </li>
