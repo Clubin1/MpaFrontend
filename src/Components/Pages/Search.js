@@ -13,17 +13,32 @@ const App = () => {
     let [insuranceState, setInsurance] = useState([])
     let [disorderState, setDisorder] = useState([])
 
+    let errorMessage = <p>No results found, please change filters.</p>
     // g
     async function fetchData() {
         let response = await axios(`https://blooming-forest-09372.herokuapp.com/psychologists?_limit=-1`); // ?_limit=-1 is to show all
         let user = await response.data;
         let userArr = [];
         let userNum = user.length;
-       
         // Set array to only if true
         for (var i = 0; i < userNum; i++) {
             if (user[i].isAccepted === true) {
-                userArr.push(user[i]);
+            //console.log(typeof(user[i].insuranceAccepted), user[i].insuranceAccepted)
+                if (user[i].insuranceAccepted === "" || user[i].insuranceAccepted === null || user[i].insuranceAccepted === " " ||
+                    user[i].specialties === "" || user[i].specialties === null || user[i].specialties === " "){
+                    if(user[i].insuranceAccepted === "" || user[i].insuranceAccepted === null || user[i].insuranceAccepted === " ") {
+                        console.log(user[i].name, "insurance empty")
+                        user[i].insuranceAccepted = "None"
+                        userArr.push(user[i]);
+                    }
+                    if(user[i].specialties === "" || user[i].specialties === null || user[i].specialties === " ") {
+                        console.log(user[i].name, "insurance empty")
+                        user[i].specialties = "None"
+                        userArr.push(user[i]);
+                    }
+                } else {
+                    userArr.push(user[i]);
+                }
             }
         }
 
@@ -46,7 +61,7 @@ const App = () => {
             if (i.insuranceAccepted !== null && i.specialties !== null) {
                 return(i.name.toLowerCase().match(input.toLowerCase()) || i.zip.toLowerCase().match(input.toLowerCase()) || i.specialties.toLowerCase().match(input.toLowerCase()) || i.insuranceAccepted.toLowerCase().match(input.toLowerCase() || i.address.toLowerCase().match(input.toLowerCase())))
             } else {
-                return("")
+                return(                    {errorMessage})
             }
 
         });
@@ -65,16 +80,13 @@ const App = () => {
                 return(i.specialties.toLowerCase().match(disorderState.toLowerCase()))
             }else if(i.insuranceAccepted === "" || i.specialties === ""){
                 return(
-                    <div>
-
-                    </div>
+                    {errorMessage}
                 )
             }
             else{
                 return(
-                    <div>
+                    {errorMessage}
 
-                    </div>
                 )
             }
         });
@@ -92,16 +104,14 @@ const App = () => {
                     return(i.insuranceAccepted.toLowerCase().match(insuranceState.toLowerCase()))
                 }else if(i.insuranceAccepted === "" || i.specialties === ""){
                     return(
-                        <div>
-    
-                        </div>
+                        {errorMessage}
+
                     )
                 }
                 else{
                     return(
-                        <div>
-    
-                        </div>
+                        {errorMessage}
+
                     )
                 }
             });
