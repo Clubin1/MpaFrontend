@@ -42,16 +42,16 @@ const Professionals = () => {
                                 <p>{
                                     event.eventText
                                 }</p>
-
+                                <a href={event.eventLinks}>
+                                {
+                                    event.eventLinks
+                                }
+                                </a>
                             </div>
                         </div>)
                     } </div>
 
-                    <div>
-                        <h1 className="professionalHeader">
-                            MPA Supervision/Office Space Listings</h1>
-                        <p>The MPA Member Supervision Listing and MPA Member Office Space Available Listing is information provided by our members. MPA is not endorsing, recommending any psychologist listed and assumes no liability. Please contact psychologists listed for additional and/or updated information regarding availability and services.</p>
-                    </div>
+            
                     <img className="professionalsImage" src="/images/memberimg3.jpg" alt=""/>
                 </Container>
             </div>
